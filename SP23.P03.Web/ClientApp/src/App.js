@@ -8,6 +8,7 @@ import Layout from "./pages/Layout";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 import bootstrap from 'bootstrap';
+import { Link } from "react-router-dom";
 
 
 export function Test() {
@@ -27,7 +28,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <h1>EnTrack</h1>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout />}>
