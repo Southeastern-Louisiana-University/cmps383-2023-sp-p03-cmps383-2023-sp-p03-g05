@@ -23,7 +23,7 @@ const Layout = () => {
                 <Link class="nav-link disabled">Disabled</Link>
             </li>
             <li>
-    
+            <img src="/assets/img/bootstrap.svg" alt="ImageNotFound" width="32" height="32"></img>
             </li>
             </ul>
         </div>
