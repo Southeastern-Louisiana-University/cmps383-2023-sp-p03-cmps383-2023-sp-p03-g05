@@ -9,34 +9,25 @@ import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 import bootstrap from 'bootstrap';
 import { Link } from "react-router-dom";
-
-
-export function Test() {
-  const [count, setCount] = useState(0);
-
-  function handleClick() {
-    setCount(count + 1);
-  }
-
-  return (
-      <button onClick={handleClick}> Clicked { count }</button>
-  );
-}
+import Navbar from './components/Navbar';
 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <BrowserRouter>
-          <Routes>
+    
+    //Removed s in className to make them stop using the defualt react.
+    <div clasName="App">
+      <header class="border m-3 p-3" clasName="App-header">
+        <Navbar></Navbar>
+        {/* <BrowserRouter >
+          <Routes >
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="contact" element={<Contact />} />
               <Route path="*" element={<NoPage />} />
             </Route>
           </Routes>
-        </BrowserRouter>
+        </BrowserRouter> */}
       </header>
     </div>
   );
