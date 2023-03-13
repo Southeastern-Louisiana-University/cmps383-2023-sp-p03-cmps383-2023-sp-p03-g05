@@ -1,9 +1,10 @@
 import React from "react";
 import { Button } from "bootstrap";
-
+import { Link } from "react-router-dom";
+import './Navbar.css';
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-md navbar-light bg-light">
+    <nav className="navbar navbar-container navbar-expand-md navbar-light bg-light">
       <div className="container-fluid">
       <a className="navbar-brand" href="#">
         EnTrack
@@ -23,9 +24,9 @@ const Navbar = () => {
       <div className="collapse navbar-collapse justify-content-end align-center" id="navbarNavDropdown">
         <ul className="navbar-nav">
           <li className="nav-item active">
-            <a className="nav-link" href="#home">
+            <Link className="nav-link" href="#home" to="/">
               Home <span className="sr-only"></span>
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">
@@ -33,9 +34,9 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#contact">
+            <Link className="nav-link" href="#contact" to="contact">
               Contact
-            </a>
+            </Link>
           </li>
           <li className="nav-item dropdown">
             {/* <a

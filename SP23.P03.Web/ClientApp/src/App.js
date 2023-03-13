@@ -16,16 +16,18 @@ function App() {
   return (
     
     //Removed s in className to make them stop using the defualt react.
-    <div clasName="App">
+    <div className="App">
       <header class="border m-3 p-3" clasName="App-header">
-        <Home></Home>
+        {/* <Home></Home> */}
+        
         <BrowserRouter >
+        <Navbar/>
           <Routes >
-            <Route path="/" element={<Layout />}>
+            {/* <Route path="/" element={<Layout />}> */}
               <Route index element={<Home />} />
               <Route path="contact" element={<Contact />} />
               <Route path="*" element={<NoPage />} />
-            </Route>
+            {/* </Route> */}
           </Routes>
         </BrowserRouter>
       </header>
