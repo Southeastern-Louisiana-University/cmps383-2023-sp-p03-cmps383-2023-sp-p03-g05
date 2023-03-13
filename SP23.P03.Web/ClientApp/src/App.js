@@ -18,8 +18,8 @@ function App() {
     //Removed s in className to make them stop using the defualt react.
     <div clasName="App">
       <header class="border m-3 p-3" clasName="App-header">
-        <Navbar></Navbar>
-        {/* <BrowserRouter >
+        <Home></Home>
+        <BrowserRouter >
           <Routes >
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
@@ -27,7 +27,7 @@ function App() {
               <Route path="*" element={<NoPage />} />
             </Route>
           </Routes>
-        </BrowserRouter> */}
+        </BrowserRouter>
       </header>
     </div>
   );

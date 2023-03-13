@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="collapse navbar-collapse justify-content-end align-center" id="navbarNavDropdown">
         <ul className="navbar-nav">
           <li className="nav-item active">
-            <a className="nav-link" href="#Home">
+            <a className="nav-link" href="#home">
               Home <span className="sr-only"></span>
             </a>
           </li>
@@ -33,24 +33,24 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#Contact">
+            <a className="nav-link" href="#contact">
               Contact
             </a>
           </li>
           <li className="nav-item dropdown">
-            <a
+            {/* <a
               className="nav-link dropdown-toggle"
               href="#dropdown-menu"
               id="navbarDropdownMenuLink"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
-            >
-              <button className="navvar-toggler" type="button">
+            > */}
+              <button className="navvar-toggler btn" type="button">
                 Login
               </button>
-            </a>
-            
+            {/* </a> */}
+          
 
             <div
               className="dropdown-menu"
@@ -68,7 +68,7 @@ const Navbar = () => {
             </div>
           </li>
         </ul>
-      </div>
+        </div>
       </div>
     </nav>
   );
