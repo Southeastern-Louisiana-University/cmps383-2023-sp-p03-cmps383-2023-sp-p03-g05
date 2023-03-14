@@ -9,7 +9,7 @@ import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 import bootstrap from 'bootstrap';
 import { Link } from "react-router-dom";
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 
 
 function App() {
