@@ -2,9 +2,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { TicketsScreen } from './Screens/TicketsScreen';
+import { AllTicketsScreen } from './Screens/AllTicketsScreen';
 import {HomeScreen} from './Screens/HomeScreen';
-import { PurchaseTicketsScreen } from './Screens/PurchaseTickets';
+import { PurchaseTicketsScreen } from './Screens/PurchaseTicketsScreen';
+import { TicketScreen } from './Screens/TicketScreen';
 
 
 
@@ -14,21 +15,25 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen 
-          name="Home" 
-          component={HomeScreen}
-          options={styles.headers}
+        <Stack.Group screenOptions={styles.headers}>
+          <Stack.Screen 
+            name="Home" 
+            component={HomeScreen}
+            />
+          <Stack.Screen 
+            name="All Tickets" 
+            component={AllTicketsScreen}
           />
-        <Stack.Screen 
-          name="Tickets" 
-          component={TicketsScreen}
-          options={styles.headers}
-        />
-        <Stack.Screen 
-          name="Purchase Tickets" 
-          component={PurchaseTicketsScreen}
-          options={styles.headers}
-          />
+          <Stack.Screen 
+            name="Purchase Tickets" 
+            component={PurchaseTicketsScreen}
+            />
+            <Stack.Screen 
+              name="Ticket" 
+              component={TicketScreen}
+              options={({ route }) => ({ title: `${route.params.ticketName} Ticket` })}
+            />
+          </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
   );

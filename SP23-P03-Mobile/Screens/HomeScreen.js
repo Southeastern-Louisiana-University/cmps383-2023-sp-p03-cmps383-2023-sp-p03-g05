@@ -9,7 +9,7 @@ export function HomeScreen({ navigation }) {
       <View style={styles.background}>
         <Text style={styles.subheader}>Welcome to EnTrack</Text>
         <Pressable
-            onPress={() => navigation.navigate('Tickets')}
+            onPress={() => navigation.navigate('All Tickets')}
             style={styles.button}
         >
           <Text style={styles.buttonText}>Tickets</Text>
@@ -38,7 +38,8 @@ export function HomeScreen({ navigation }) {
       paddingHorizontal: 5,
       width: 170,
       borderRadius: 0,
-      borderColor: "#000000",
+      borderColor: '#000000',
+      borderWidth: 1,
       backgroundColor: '#56ade7',
        
 
