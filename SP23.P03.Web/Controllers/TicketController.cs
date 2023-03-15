@@ -8,6 +8,7 @@ using SP23.P03.Web.Features.Ticket;
 using SP23.P03.Web.Features.Tickets;
 
 
+
 namespace SP23.P03.Web.Controllers;
 
     [Route("api/tickets")]
@@ -41,7 +42,7 @@ namespace SP23.P03.Web.Controllers;
             {
                 return NotFound();
             }
-
+            
             return Ok(result);
         }
 

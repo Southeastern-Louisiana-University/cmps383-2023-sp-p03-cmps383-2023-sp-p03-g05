@@ -1,4 +1,7 @@
-﻿using SP23.P03.Web.Features.TrainStations;
+﻿
+
+using SP23.P03.Web.Features.Tickets;
+
 
 namespace SP23.P03.Web.Features.Tickets;
 
@@ -10,7 +13,8 @@ public class TicketDto
 
     public int endingDestination { get; set; }
 
-    //public List<TrainStationDto> ?TrainStation { get; set; }
-}
+    public List<TicketDestination>? TicketDestination { get; set; }
+
+}  
 
 

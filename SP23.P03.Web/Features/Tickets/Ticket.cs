@@ -7,10 +7,7 @@ public class Ticket
     public int startingDestination { get; set; }
 
     public int endingDestination { get; set; }
-
-
-
-
+    
 }
 
 
