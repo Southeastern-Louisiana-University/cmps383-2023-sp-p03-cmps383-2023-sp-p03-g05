@@ -14,9 +14,21 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen}/>
-        <Stack.Screen name="Tickets" component={TicketsScreen}/>
-        <Stack.Screen name="Purchase Tickets" component={PurchaseTicketsScreen}/>
+        <Stack.Screen 
+          name="Home" 
+          component={HomeScreen}
+          options={styles.headers}
+          />
+        <Stack.Screen 
+          name="Tickets" 
+          component={TicketsScreen}
+          options={styles.headers}
+        />
+        <Stack.Screen 
+          name="Purchase Tickets" 
+          component={PurchaseTicketsScreen}
+          options={styles.headers}
+          />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -25,8 +37,17 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  headers:{
+    headerStyle: {
+      backgroundColor: '#0c8d21',
+    },
+    headerTintColor: '#ffffff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  }
 });
