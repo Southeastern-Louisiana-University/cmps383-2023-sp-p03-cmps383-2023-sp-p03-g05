@@ -86,6 +86,12 @@ public static class SeedHelper
                     startingDestination = 1,
                     endingDestination = 3
                 });
+        dataContext.Set<Ticket>()
+               .Add(new Ticket
+               {
+                   startingDestination = 33,
+                   endingDestination = 2
+               });
     }
 
         private static async Task AddTrainStation(DataContext dataContext)
