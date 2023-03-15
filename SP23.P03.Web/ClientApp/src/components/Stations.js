@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 
-const baseUrl = "https://localhost:7031/api"
+const baseUrl = "/api"
 const Stations = () => {
     const [station, setStation] = useState([]);
 
