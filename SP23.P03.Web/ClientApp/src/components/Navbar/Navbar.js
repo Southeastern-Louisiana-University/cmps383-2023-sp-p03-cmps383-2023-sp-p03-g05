@@ -24,21 +24,21 @@ const Navbar = () => {
       <div className="collapse navbar-collapse justify-content-end align-center" id="navbarNavDropdown">
         <ul className="navbar-nav">
           <li className="nav-item active">
-          <button className="navvar-toggler btn" type="button" style={{backgroundColor: "#56ade7"}}>
-            <Link className="nav-link" href="#home" to="/" style={{backgroundColor: "#56ade7"}}>
+          <button className="navvar-toggler btn" type="button" >
+            <Link className="nav-link" href="#home" to="/" >
               Home <span className="sr-only"></span>
             </Link>
           </button>
           </li>
           <li className="nav-item">
-          <button className="navvar-toggler btn" type="button" style={{backgroundColor: "#56ade7"}}>
-            <Link className="nav-link" href="#tickets" to="tickets" style={{backgroundColor: "#56ade7"}}>
+          <button className="navvar-toggler btn" type="button">
+            <Link className="nav-link" href="#tickets" to="tickets">
               Book a Trip
             </Link>
           </button>
           </li>
           <li className="nav-item">
-            <button className="navvar-toggler btn" type="button" style={{backgroundColor: "#56ade7"}}>
+            <button className="navvar-toggler btn" type="button">
             <Link className="nav-link" href="#contact" to="contact" >
               Contact
             </Link>
@@ -53,11 +53,8 @@ const Navbar = () => {
               aria-haspopup="true"
               aria-expanded="false"
             > */}
-              <button className="navvar-toggler btn" type="button" style={{backgroundColor: "#56ade7"}}>
-                <Link>
+              <button className="navvar-toggler btn" type="button">
                 Login
-                </Link>
-
               </button>
             {/* </a> */}
           
