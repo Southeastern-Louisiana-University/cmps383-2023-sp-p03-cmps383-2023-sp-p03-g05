@@ -24,10 +24,15 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.selu383.sp23.p03.g##"
+      "package": "com.selu383.sp23.p03.g05"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra":{
+      "eas":{
+        "projectId": "05619df0-6407-43d3-ba79-9244c5a8b724"
+      }
     }
   }
 }

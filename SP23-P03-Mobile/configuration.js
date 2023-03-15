@@ -1,4 +1,4 @@
 export const BaseUrl = 
-    process.env.NODE_ENV === "production"
-    ? "https://selu383-sp23-p03-g05.azurewebsites.net/"
-    : "ngrok.com"
+    process.env.NODE_ENV === "Production" ?
+        "http://selu383-sp23-p03-g05.azurewebsites.net" :
+        "http://8e43-147-174-75-6.ngrok.io"; //local ngrok url
