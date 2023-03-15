@@ -4,7 +4,7 @@ import './Navbar.css';
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-container navbar-expand-md navbar-light bg-light">
+    <nav className="navbar navbar-container navbar-expand-md navbar-light" style={{backgroundColor: "#0c8d21"}}>
       <div className="container-fluid">
       <Link className="navbar-brand" to="/">
         EnTrack
@@ -24,19 +24,25 @@ const Navbar = () => {
       <div className="collapse navbar-collapse justify-content-end align-center" id="navbarNavDropdown">
         <ul className="navbar-nav">
           <li className="nav-item active">
-            <Link className="nav-link" href="#home" to="/">
+          <button className="navvar-toggler btn" type="button" style={{backgroundColor: "#56ade7"}}>
+            <Link className="nav-link" href="#home" to="/" style={{backgroundColor: "#56ade7"}}>
               Home <span className="sr-only"></span>
             </Link>
+          </button>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" href="#tickets" to="tickets">
+          <button className="navvar-toggler btn" type="button" style={{backgroundColor: "#56ade7"}}>
+            <Link className="nav-link" href="#tickets" to="tickets" style={{backgroundColor: "#56ade7"}}>
               Book a Trip
             </Link>
+          </button>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" href="#contact" to="contact">
+            <button className="navvar-toggler btn" type="button" style={{backgroundColor: "#56ade7"}}>
+            <Link className="nav-link" href="#contact" to="contact" >
               Contact
             </Link>
+          </button>
           </li>
           <li className="nav-item dropdown">
             {/* <a
@@ -47,8 +53,11 @@ const Navbar = () => {
               aria-haspopup="true"
               aria-expanded="false"
             > */}
-              <button className="navvar-toggler btn" type="button">
+              <button className="navvar-toggler btn" type="button" style={{backgroundColor: "#56ade7"}}>
+                <Link>
                 Login
+                </Link>
+
               </button>
             {/* </a> */}
           
