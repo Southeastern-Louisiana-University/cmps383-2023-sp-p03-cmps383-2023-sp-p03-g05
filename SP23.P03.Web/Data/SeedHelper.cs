@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SP23.P03.Web.Features.Authorization;
+using SP23.P03.Web.Features.Ticket;
 using SP23.P03.Web.Features.TrainStations;
 
 namespace SP23.P03.Web.Data;
@@ -17,6 +18,7 @@ public static class SeedHelper
         await AddUsers(serviceProvider);
 
         await AddTrainStation(dataContext);
+        await AddTicket(dataContext);
     }
 
     private static async Task AddUsers(IServiceProvider serviceProvider)
@@ -68,8 +70,25 @@ public static class SeedHelper
             Name = RoleNames.User
         });
     }
+    private static async Task AddTicket(DataContext dataContext)
+    {
+        var tickets = dataContext.Set<Ticket>();
 
-    private static async Task AddTrainStation(DataContext dataContext)
+        if (await tickets.AnyAsync())
+        {
+            return;
+        }
+
+
+        dataContext.Set<Features.Ticket.Ticket>()
+                .Add(new Features.Ticket.Ticket
+                {
+                    startingDestination = 1,
+                    endingDestination = 3
+                });
+    }
+
+        private static async Task AddTrainStation(DataContext dataContext)
     {
         var trainStations = dataContext.Set<TrainStation>();
 
