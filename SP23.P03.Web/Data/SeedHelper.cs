@@ -80,8 +80,8 @@ public static class SeedHelper
         }
 
 
-        dataContext.Set<Features.Ticket.Ticket>()
-                .Add(new Features.Ticket.Ticket
+        dataContext.Set<Ticket>()
+                .Add(new Ticket
                 {
                     startingDestination = 1,
                     endingDestination = 3

@@ -8,8 +8,8 @@ using SP23.P03.Web.Features.Ticket;
 using SP23.P03.Web.Features.Tickets;
 
 
-namespace SP23.P03.Web.Controllers
-{
+namespace SP23.P03.Web.Controllers;
+
     [Route("api/tickets")]
     [ApiController]
 
@@ -45,20 +45,21 @@ namespace SP23.P03.Web.Controllers
             return Ok(result);
         }
 
+
+
+
+        private static IQueryable<TicketDto> GetTicketDtos(IQueryable<Ticket> tickets)
+        {
+            return tickets
+                .Select(x => new TicketDto
+                {
+                    Id = x.Id,
+
+                    startingDestination = x.startingDestination,
+
+                    endingDestination = x.endingDestination
+
+                });
+        }
+
     }
-
-
-    private static IQueryable<TicketDto> GetTicketDtos(IQueryable<Ticket> tickets)
-    {
-        return tickets
-            .Select(x => new TicketDto
-            {
-                Id = x.Id,
-
-                startingDestination = x.startingDestination,
-
-                endingDestination = x.endingDestination
-
-            });
-    }
-}
