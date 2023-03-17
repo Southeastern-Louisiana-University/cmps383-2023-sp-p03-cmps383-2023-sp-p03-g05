@@ -110,7 +110,7 @@ public static class SeedHelper
 
         var hammond = new TrainStation
         {
-            Name = "Hamond",
+            Name = "Hammond",
             Address = "1234 Place st"
         };
 
