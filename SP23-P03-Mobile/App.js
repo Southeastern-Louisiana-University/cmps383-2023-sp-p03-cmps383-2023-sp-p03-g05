@@ -4,6 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { AllTicketsScreen } from './Screens/AllTicketsScreen';
 import {HomeScreen} from './Screens/HomeScreen';
+import { LogInScreen } from './Screens/LogInScreen';
 import { PurchaseTicketsScreen } from './Screens/PurchaseTicketsScreen';
 import { TicketScreen } from './Screens/TicketScreen';
 
@@ -14,8 +15,8 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Group screenOptions={styles.headers}>
+      <Stack.Navigator >
+        <Stack.Group screenOptions={styles.headers} >
           <Stack.Screen 
             name="Home" 
             component={HomeScreen}
@@ -32,6 +33,10 @@ export default function App() {
               name="Ticket" 
               component={TicketScreen}
               options={({ route }) => ({ title: `${route.params.ticketName} Ticket` })}
+            />
+            <Stack.Screen 
+              name="Login" 
+              component={LogInScreen}
             />
           </Stack.Group>
       </Stack.Navigator>

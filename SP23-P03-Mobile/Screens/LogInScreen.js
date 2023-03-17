@@ -1,27 +1,25 @@
 import * as React from "react";
-import { Pressable,Button, ScrollView, View, Text, StyleSheet } from "react-native";
+import { Pressable,Button, ScrollView, View, Text, StyleSheet, TextInput } from "react-native";
 import { useEffect, useState } from "react";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export function HomeScreen({ navigation }) {
+export function LogInScreen({ navigation }) {
     return (
       <View style={styles.background}>
-        <Text style={styles.subheader}>Welcome to EnTrack</Text>
+       <TextInput
+          style={styles.input}
+          placeholder="Username"
+          keyboardType="alphabetic"
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Password"
+          keyboardType="alphabetic"
+          secureTextEntry={true}
+        />
         <Pressable
-            onPress={() => navigation.navigate('All Tickets')}
-            style={styles.button}
-        >
-          <Text style={styles.buttonText}>Tickets</Text>
-        </Pressable>
-        <Pressable
-            onPress={() => navigation.navigate('Purchase Tickets')}
-            style={styles.button}
-        >
-          <Text style={styles.buttonText}>Purchase Tickets</Text>
-        </Pressable>
-        <Pressable
-            onPress={() => navigation.navigate('Login')}
+            onPress={() => navigation.navigate('Home')}
             style={styles.button}
         >
           <Text style={styles.buttonText}>Login</Text>
@@ -35,6 +33,14 @@ export function HomeScreen({ navigation }) {
     background: {
       backgroundColor: "##ffffff",
     },
+    input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 7,
+        fontSize: 20,
+        marginBottom: 25
+      },
     button :{
       alignItems: 'center',
       alignSelf: 'center',
@@ -43,7 +49,7 @@ export function HomeScreen({ navigation }) {
       paddingVertical: 10,
       paddingHorizontal: 5,
       width: 170,
-      borderRadius: 2,
+      borderRadius: 0,
       borderColor: '#000000',
       borderWidth: 1,
       backgroundColor: '#56ade7',
@@ -69,7 +75,6 @@ export function HomeScreen({ navigation }) {
       paddingRight: 10,
       paddingBottom: 10,
       paddingTop: 10,
-      borderRadius: 5,
       backgroundColor: '#56ade7'
     }
   });
