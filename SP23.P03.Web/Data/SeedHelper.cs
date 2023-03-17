@@ -110,7 +110,7 @@ public static class SeedHelper
 
         var hammond = new TrainStation
         {
-            Name = "Hammond",
+            Name = "Hammmmmmmmmmond",
             Address = "1234 Place st"
         };
 
@@ -288,7 +288,7 @@ public static class SeedHelper
         };
 
         dataContext.Set<TrainStation>()
-                .Add(hammond);
+                .Add(beaumont);
 
         var Huston = new TrainStation
         {
