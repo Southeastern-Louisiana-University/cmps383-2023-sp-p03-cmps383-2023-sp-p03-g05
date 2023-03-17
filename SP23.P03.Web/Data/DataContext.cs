@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SP23.P03.Web.Features.Authorization;
 using SP23.P03.Web.Features.Ticket;
+using SP23.P03.Web.Features.Tickets;
 
 namespace SP23.P03.Web.Data;
 
@@ -17,6 +18,7 @@ public class DataContext : IdentityDbContext<User, Role, int, IdentityUserClaim<
     }
 
     DbSet<Ticket> Ticket { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);

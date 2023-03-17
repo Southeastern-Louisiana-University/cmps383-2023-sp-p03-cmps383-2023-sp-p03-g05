@@ -7,7 +7,7 @@ public class TicketDestination
 {
     public int Id { get; set; }
 
-    public int TrainStationId { get; set; }
+   
 
     public TrainStationDto? TrainStationDto { get; set; }
 

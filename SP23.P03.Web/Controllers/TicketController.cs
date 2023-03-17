@@ -58,7 +58,9 @@ namespace SP23.P03.Web.Controllers;
 
                     startingDestination = x.startingDestination,
 
-                    endingDestination = x.endingDestination
+                    endingDestination = x.endingDestination,
+
+                   
 
                 });
         }
