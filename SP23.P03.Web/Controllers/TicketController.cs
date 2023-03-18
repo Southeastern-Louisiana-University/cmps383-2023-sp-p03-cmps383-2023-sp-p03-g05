@@ -56,11 +56,8 @@ namespace SP23.P03.Web.Controllers;
                 {
                     Id = x.Id,
 
-                    startingDestination = x.startingDestination,
 
-                    endingDestination = x.endingDestination,
-
-                   
+                   //StartingDestination = x.StartingDestination
 
                 });
         }

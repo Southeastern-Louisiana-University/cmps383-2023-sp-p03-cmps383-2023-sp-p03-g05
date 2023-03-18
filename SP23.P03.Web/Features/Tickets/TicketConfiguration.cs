@@ -7,12 +7,7 @@ public class TicketConfiguration : IEntityTypeConfiguration<Ticket>
 {
     public void Configure(EntityTypeBuilder<Ticket> builder)
     {
-        builder.Property(x => x.startingDestination)
-            .IsRequired();
-
-        builder.Property(x => x.endingDestination)
-            .IsRequired();
-
+        
       
     }
 }

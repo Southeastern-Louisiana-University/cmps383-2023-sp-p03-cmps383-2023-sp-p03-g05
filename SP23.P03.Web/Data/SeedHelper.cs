@@ -71,6 +71,7 @@ public static class SeedHelper
             Name = RoleNames.User
         });
     }
+
     private static async Task AddTicket(DataContext dataContext)
     {
         var tickets = dataContext.Set<Ticket>();
@@ -80,22 +81,14 @@ public static class SeedHelper
             return;
         }
 
-
-
-        dataContext.Set<Ticket>()
-                .Add(new Ticket
-                {
-                    startingDestination = 3,
-                    endingDestination = 2,
-                });
-                
         dataContext.Set<Ticket>()
                .Add(new Ticket
                {
-                   startingDestination = 3,
-                   endingDestination = 2,
-                  
+                   //StartingDestination = hammond
                });
+
+
+
         await dataContext.SaveChangesAsync();
     }
 
