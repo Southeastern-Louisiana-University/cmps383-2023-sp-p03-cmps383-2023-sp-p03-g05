@@ -81,11 +81,7 @@ public static class SeedHelper
             return;
         }
 
-        dataContext.Set<Ticket>()
-               .Add(new Ticket
-               {
-                   //StartingDestination = hammond
-               });
+    
 
 
 

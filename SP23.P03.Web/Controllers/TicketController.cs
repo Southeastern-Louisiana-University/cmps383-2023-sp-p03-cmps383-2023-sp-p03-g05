@@ -55,10 +55,6 @@ namespace SP23.P03.Web.Controllers;
                 .Select(x => new TicketDto
                 {
                     Id = x.Id,
-
-
-                   //StartingDestination = x.StartingDestination
-
                 });
         }
 
