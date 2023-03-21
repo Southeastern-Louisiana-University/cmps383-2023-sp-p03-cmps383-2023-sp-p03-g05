@@ -56,6 +56,7 @@ namespace SP23.P03.Web.Controllers;
             {
                 Id = x.Id,
                 StartingTrainStationId = x.StartingTrainStationId
+                
             }) ;
         }
 

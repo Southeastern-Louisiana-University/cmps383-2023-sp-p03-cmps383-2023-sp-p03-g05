@@ -8,7 +8,7 @@ public class StartingDestination
 {
     public int Id { get; set; }
 
-    public int TrainStationId { get; set; }
+   
 
    
 
