@@ -9,8 +9,6 @@ public class TicketDto
 
     public int StartingTrainStationId { get; set; }
 
-
-
     public TrainStationDto? StartingTrainStation { get; set; }
 
 }  

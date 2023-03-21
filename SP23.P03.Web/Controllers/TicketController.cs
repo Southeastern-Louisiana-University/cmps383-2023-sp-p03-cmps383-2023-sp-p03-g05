@@ -51,11 +51,12 @@ namespace SP23.P03.Web.Controllers;
 
         private static IQueryable<TicketDto> GetTicketDtos(IQueryable<Ticket> tickets)
         {
-            return tickets
-                .Select(x => new TicketDto
-                {
-                    Id = x.Id,
-                });
+        return tickets
+            .Select(x => new TicketDto
+            {
+                Id = x.Id,
+                StartingTrainStationId = x.StartingTrainStationId
+            }) ;
         }
 
     }

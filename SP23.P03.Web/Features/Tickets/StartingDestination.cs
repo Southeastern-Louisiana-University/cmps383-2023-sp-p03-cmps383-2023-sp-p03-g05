@@ -12,7 +12,7 @@ public class StartingDestination
 
    
 
-    public TrainStationDto? TrainStationDto { get; set; }
+    public TrainStation? TrainStation{ get; set; }
 
 
 
