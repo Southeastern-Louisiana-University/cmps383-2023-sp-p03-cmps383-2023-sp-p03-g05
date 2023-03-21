@@ -76,13 +76,24 @@ public static class SeedHelper
     {
         var tickets = dataContext.Set<Ticket>();
 
-        if (await tickets.AnyAsync())
+        if (await tickets.AnyAsync(x => x.StartingTrainStationId == 3))
         {
             return;
         }
 
-    
+        var Ticket1 = new Ticket
+        {
+           StartingTrainStationId = 3
+        };
+        dataContext.Set<Ticket>()
+                .Add(Ticket1);
 
+        var Ticket2 = new Ticket
+        {
+            StartingTrainStationId = 5
+        };
+        dataContext.Set<Ticket>()
+                .Add(Ticket2);
 
 
         await dataContext.SaveChangesAsync();
