@@ -76,17 +76,11 @@ public static class SeedHelper
     {
         var tickets = dataContext.Set<Ticket>();
 
-        if (await tickets.AnyAsync())
+/*        if (await tickets.AnyAsync())
         {
             return;
-        }
+        }*/
 
-        var Ticket1 = new Ticket
-        {
-           StartingTrainStationId = 3
-        };
-        dataContext.Set<Ticket>()
-                .Add(Ticket1);
 
 
         await dataContext.SaveChangesAsync();
@@ -96,10 +90,10 @@ public static class SeedHelper
     {
         var trainStations = dataContext.Set<TrainStation>();
 
-        if (await trainStations.AnyAsync())
+/*        if (await trainStations.AnyAsync())
         { 
             return;
-        }
+        }*/
 
         var hammond = new TrainStation
         {
@@ -477,6 +471,14 @@ public static class SeedHelper
 
         dataContext.Set<TrainStation>()
                 .Add(sanAntonio);
+
+        var Ticket1 = new Ticket
+        {
+            StartingTrainStation = hammond,
+            EndingTrainStation = mcComb
+        };
+
+        dataContext.Set<Ticket>().Add(Ticket1);
 
         await dataContext.SaveChangesAsync();
     }

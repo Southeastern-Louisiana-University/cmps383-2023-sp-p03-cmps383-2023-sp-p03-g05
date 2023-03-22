@@ -6,6 +6,7 @@ using SP23.P03.Web.Extensions;
 using SP23.P03.Web.Features.Authorization;
 using SP23.P03.Web.Features.Ticket;
 using SP23.P03.Web.Features.Tickets;
+using SP23.P03.Web.Features.TrainStations;
 
 
 
@@ -55,9 +56,20 @@ namespace SP23.P03.Web.Controllers;
             .Select(x => new TicketDto
             {
                 Id = x.Id,
-                StartingTrainStationId = x.StartingTrainStationId
-                
-            }) ;
+                //StartingTrainStationId = x.StartingTrainStationId
+                StartingTrainStation = new TrainStationDto
+                {
+                    Id = x.StartingTrainStation.Id,
+                    Name = x.StartingTrainStation.Name,
+                    Address = x.StartingTrainStation.Address
+                },
+                EndingTrainStation = new TrainStationDto
+                {
+                    Id = x.EndingTrainStation.Id,
+                    Name = x.EndingTrainStation.Name,
+                    Address = x.EndingTrainStation.Address
+                },
+            });
         }
 
     }

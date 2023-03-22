@@ -7,9 +7,10 @@ public class TicketDto
 {
 	public int Id { get; set; }
 
-    public int StartingTrainStationId { get; set; }
+    //public int StartingTrainStationId { get; set; }
 
-    //public TrainStationDto? StartingTrainStation { get; set; }
+    public TrainStationDto? StartingTrainStation { get; set; }
+    public TrainStationDto? EndingTrainStation { get; set; }
 
 }  
 
