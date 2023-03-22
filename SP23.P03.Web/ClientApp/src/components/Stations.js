@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 
-const baseUrl = "localhost:3000/api"
+const baseUrl = "https://selu383-sp23-p03-g05.azurewebsites.net/api"
 const Stations = () => {
     const [station, setStation] = useState([]);
 
