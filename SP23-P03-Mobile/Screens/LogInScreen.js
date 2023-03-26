@@ -1,33 +1,40 @@
 import * as React from "react";
 import { Pressable,Button, ScrollView, View, Text, StyleSheet, TextInput } from "react-native";
 import { useEffect, useState } from "react";
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 
 export function LogInScreen({ navigation }) {
     return (
       <View style={styles.background}>
-       <TextInput
-          style={styles.input}
-          placeholder="Username"
-          keyboardType="alphabetic"
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Password"
-          keyboardType="alphabetic"
-          secureTextEntry={true}
-        />
-        <Pressable
-            onPress={() => navigation.navigate('Home')}
-            style={styles.button}
-        >
-          <Text style={styles.buttonText}>Login</Text>
-        </Pressable>
-        
+          <TextInput
+              style={styles.input}
+              placeholder="Username"
+              keyboardType="alphabetic"
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Password"
+              keyboardType="alphabetic"
+              secureTextEntry={true}
+            />
+            <Pressable
+                onPress={handleSubmit}
+                style={styles.button}
+            >
+              <Text style={styles.buttonText}>Login</Text>
+            </Pressable>
       </View>
     );
   }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const username = e.target.username.value;
+    const password = e.target.password.value;
+
+    axios.post(`${BaseUrl}/api/authentication/login`, {username, password});
+}
 
   const styles = StyleSheet.create({
     background: {
@@ -52,7 +59,7 @@ export function LogInScreen({ navigation }) {
       borderRadius: 0,
       borderColor: '#000000',
       borderWidth: 1,
-      backgroundColor: '#56ade7',
+      backgroundColor: '#1b225a',
        
 
     },
@@ -61,7 +68,7 @@ export function LogInScreen({ navigation }) {
       lineHeight: 21,
       fontWeight: 'bold',
       letterSpacing: 0.25,
-      color: 'black',
+      color: 'white',
     },
     
     subheader:{
@@ -75,7 +82,7 @@ export function LogInScreen({ navigation }) {
       paddingRight: 10,
       paddingBottom: 10,
       paddingTop: 10,
-      backgroundColor: '#56ade7'
+      backgroundColor: '#1b225a'
     }
   });
   
