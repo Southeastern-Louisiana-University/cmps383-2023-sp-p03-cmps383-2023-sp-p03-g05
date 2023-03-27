@@ -11,6 +11,9 @@ import NoPage from "./pages/NoPage";
 import Navbar from './components/Navbar/Navbar';
 import Tickets from './pages/Tickets';
 
+import HomeFooter from './components/HomeFooter/HomeFooter';
+import HomeLayout from './components/HomeLayout/HomeLayout';
+
 
 function App() {
   return (
@@ -32,6 +35,8 @@ function App() {
           </Routes>
         </BrowserRouter>
       </header>
+      <HomeLayout></HomeLayout>
+      <HomeFooter></HomeFooter>
     </div>
   );
 }
