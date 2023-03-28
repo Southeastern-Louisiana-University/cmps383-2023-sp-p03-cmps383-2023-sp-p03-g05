@@ -29,7 +29,7 @@ const Home = () => {
 
                   <div class="col">
 
-                    <Map></Map>
+                    
                  
                   </div>
 
