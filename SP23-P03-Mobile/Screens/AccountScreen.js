@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const backgroundImage = require("../assets/BackgroundImage.jpg") ;
 
-export function HomeScreen({ navigation }) {
+export function AccountScreen({ navigation }) {
     return (
       <View style={styles.background}>
         <ImageBackground source={backgroundImage} style={styles.image}>
