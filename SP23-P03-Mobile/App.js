@@ -44,6 +44,7 @@ function TabNavigator(){
             <MaterialCommunityIcons name="login" color={color} size={size} />
           ),
         }}
+        
         />
       </Tab.Navigator>
   );
@@ -86,6 +87,7 @@ const styles = StyleSheet.create({
     tabBarActiveTintColor:'#f43f5e',
     tabBarActiveBackgroundColor: '#1b225a',
     tabBarInactiveBackgroundColor: '#1b225a',
+    backBehavior: "order",
     
   },
 
