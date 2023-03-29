@@ -2,14 +2,14 @@ import React from 'react'
 import { Table, Row, Col } from 'react-bootstrap'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import axios from 'axios'
+import axios from 'axios';
 
-const baseUrl = "https://localhost:7031/api"
+const baseUrl = "https://localhost:7031/api/"
 const Stations = () => {
     const [station, setStation] = useState([]);
 
     useEffect(() => {
-        axios.get(`${baseUrl}/stations`)
+        axios.get(`${baseUrl}stations`)
         .then(response => 
             {
                 setStation(response.data);
