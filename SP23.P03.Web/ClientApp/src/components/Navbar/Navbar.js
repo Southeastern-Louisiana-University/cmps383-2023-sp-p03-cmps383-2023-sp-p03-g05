@@ -1,14 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './Navbar.css';
+import {Container, Nav, NavDropdown, Button} from "react-bootstrap";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-container navbar-expand-md navbar-light" style={{backgroundColor: "#0c8d21"}}>
-      <div className="container-fluid">
-      <Link className="navbar-brand" to="/">
+    
+    <nav className="navbar navbar-container navbar-expand-md navbar-light align-items-center" style={{backgroundColor: "#f43f5e"}}>
+      <div className="container-fluid d-flex">
+
+      <Button style={{backgroundColor: '#f43f5e', borderWidth: '0px'}}>
+        <Link className="navbar-brand" to="/">
+        <img src="./assets/testlogo.png" alt="" width="80" height="50"></img>
+        </Link>
+      </Button>
+
+      {/* <Link className="navbar-brand" to="/">
         EnTrack
-      </Link>
+      </Link> */}
       <button
         className="navbar-toggler"
         type="button"
@@ -21,10 +30,10 @@ const Navbar = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div className="collapse navbar-collapse justify-content-end align-center" id="navbarNavDropdown">
+      <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav">
           <li className="nav-item active">
-          <button className="navvar-toggler btn" type="button" >
+          <button className="navbar-toggler btn" type="button" >
             <Link className="nav-link" href="#home" to="/" >
               Home <span className="sr-only"></span>
             </Link>
@@ -45,21 +54,21 @@ const Navbar = () => {
           </button>
           </li>
           <li className="nav-item dropdown">
-            {/* <a
+            <a
               className="nav-link dropdown-toggle"
               href="#dropdown-menu"
               id="navbarDropdownMenuLink"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
-            > */}
+            >
               <button className="navvar-toggler btn" type="button">
                 Login
               </button>
-            {/* </a> */}
+            </a>
           
 
-            {/* <div
+            <div
               className="dropdown-menu"
               aria-labelledby="navbarDropdownMenuLink"
             >
@@ -72,12 +81,35 @@ const Navbar = () => {
               <a className="dropdown-item" href="#">
                 Something else here
               </a>
-            </div> */}
+            </div>
           </li>
         </ul>
         </div>
       </div>
     </nav>
+      //   <Navbar bg="light" expand="lg">
+      //   <Container>
+      //     {/* <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand> */}
+      //     <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      //     <Navbar.Collapse id="basic-navbar-nav">
+      //       <Nav className="me-auto">
+      //         <Nav.Link href="#home">Home</Nav.Link>
+      //         <Nav.Link href="#link">Link</Nav.Link>
+      //         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+      //           <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+      //           <NavDropdown.Item href="#action/3.2">
+      //             Another action
+      //           </NavDropdown.Item>
+      //           <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+      //           <NavDropdown.Divider />
+      //           <NavDropdown.Item href="#action/3.4">
+      //             Separated link
+      //           </NavDropdown.Item>
+      //         </NavDropdown>
+      //       </Nav>
+      //     </Navbar.Collapse>
+      //   </Container>
+      // </Navbar>
   );
 };
 

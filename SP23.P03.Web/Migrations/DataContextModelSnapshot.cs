@@ -17,7 +17,7 @@ namespace SP23.P03.Web.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.2")
+                .HasAnnotation("ProductVersion", "7.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -223,6 +223,29 @@ namespace SP23.P03.Web.Migrations
                     b.ToTable("AspNetUserRoles", (string)null);
                 });
 
+            modelBuilder.Entity("SP23.P03.Web.Features.Ticket.Ticket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("EndingTrainStationId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("StartingTrainStationId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EndingTrainStationId");
+
+                    b.HasIndex("StartingTrainStationId");
+
+                    b.ToTable("Ticket");
+                });
+
             modelBuilder.Entity("SP23.P03.Web.Features.TrainStations.TrainStation", b =>
                 {
                     b.Property<int>("Id")
@@ -303,6 +326,21 @@ namespace SP23.P03.Web.Migrations
                     b.Navigation("Role");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("SP23.P03.Web.Features.Ticket.Ticket", b =>
+                {
+                    b.HasOne("SP23.P03.Web.Features.TrainStations.TrainStation", "EndingTrainStation")
+                        .WithMany()
+                        .HasForeignKey("EndingTrainStationId");
+
+                    b.HasOne("SP23.P03.Web.Features.TrainStations.TrainStation", "StartingTrainStation")
+                        .WithMany()
+                        .HasForeignKey("StartingTrainStationId");
+
+                    b.Navigation("EndingTrainStation");
+
+                    b.Navigation("StartingTrainStation");
                 });
 
             modelBuilder.Entity("SP23.P03.Web.Features.TrainStations.TrainStation", b =>

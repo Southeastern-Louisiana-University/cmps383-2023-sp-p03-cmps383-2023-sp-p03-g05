@@ -20,7 +20,7 @@ export function PurchaseTicketsScreen() {
         </Text>
         <TextInput
           style={styles.input}
-          placeholder="Austin, TX"
+          placeholder="Houston, TX"
           keyboardType="alphabetic"
         />
 
@@ -49,10 +49,18 @@ export function PurchaseTicketsScreen() {
       paddingVertical: 10,
       paddingHorizontal: 5,
       borderRadius: 0,
-      width: 50,
-      backgroundColor: '#56ade7',
+      width: 75,
+      backgroundColor: '#1b225a',
       borderColor: '#000000',
       borderWidth: 1
   
+    },
+    buttonText:{
+      fontSize: 16,
+      lineHeight: 21,
+      fontWeight: 'bold',
+      letterSpacing: 0.25,
+      color: 'white',
+    
     },
   });

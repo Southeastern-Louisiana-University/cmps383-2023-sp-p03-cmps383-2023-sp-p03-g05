@@ -2,6 +2,12 @@ import * as React from "react";
 import { Pressable, Button, ScrollView, View, Text, StyleSheet } from "react-native";
 import { useEffect, useState } from "react";
 import { BaseUrl } from "../configuration";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { TicketScreen } from './TicketScreen.js';
+
+
+const Stack = createNativeStackNavigator();
+
 
 export function AllTicketsScreen({navigation}) {
 
@@ -14,21 +20,21 @@ export function AllTicketsScreen({navigation}) {
     const ticket2= "Baton Rouge to Houston";
 
     return (
-      <View>
-        <Pressable
-            onPress={() => navigation.push('Ticket', {ticketName: ticket1} )}
-            style={styles.button1}
-        >
-          <Text style={styles.buttonText}>{ticket1}</Text>
-        </Pressable>
-        <Pressable
-            onPress={() => navigation.navigate('Ticket', {ticketName: ticket2})}
-            style={styles.button2}
-        >
-          <Text style={styles.buttonText}>{ticket2}</Text>
-        </Pressable>
-        
-      </View>
+          <View>
+            <Pressable
+                onPress={() => navigation.push('Ticket', {ticketName: ticket1} )}
+                style={styles.button1}
+            >
+              <Text style={styles.buttonText}>{ticket1}</Text>
+            </Pressable>
+            <Pressable
+                onPress={() => navigation.navigate('Ticket', {ticketName: ticket2})}
+                style={styles.button2}
+            >
+              <Text style={styles.buttonText}>{ticket2}</Text>
+            </Pressable>
+            
+          </View>
     );
 }
 
@@ -42,7 +48,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 5,
     borderRadius: 0,
-    backgroundColor: '#56ade7',
+    backgroundColor: '#1b225a',
     borderColor: '#000000',
     borderWidth: 1
 
@@ -53,7 +59,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 5,
     borderRadius: 0,
-    backgroundColor: '#82bce2',
+    backgroundColor: '#434c8c',
     borderColor: '#000000',
     borderWidth: 1
   },
@@ -62,7 +68,7 @@ const styles = StyleSheet.create({
     lineHeight: 21,
     fontWeight: 'bold',
     letterSpacing: 0.25,
-    color: 'black',
+    color: 'white',
   },
   
   subheader:{
