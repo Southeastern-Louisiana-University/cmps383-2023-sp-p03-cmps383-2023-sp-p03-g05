@@ -11,12 +11,17 @@ import NoPage from "./pages/NoPage";
 import Navbar from './components/Navbar/Navbar';
 import Tickets from './pages/Tickets';
 
+import HomeFooter from './components/HomeFooter/HomeFooter';
+import HomeLayout from './components/HomeLayout/HomeLayout';
+
+import ContactUs from './components/ContactUs/ContactUs';
+
 
 function App() {
   return (
     
     //Removed s in className to make them stop using the defualt react.
-    <div className="App">
+    <div className="App" style={{backgroundColor: '#f3eed9'}}>
       <header class="border m-3 p-3">
         {/* <Home></Home> */}
         
@@ -31,7 +36,10 @@ function App() {
             {/* </Route> */}
           </Routes>
         </BrowserRouter>
+        <HomeLayout></HomeLayout>
       </header>
+      
+      
     </div>
   );
 }

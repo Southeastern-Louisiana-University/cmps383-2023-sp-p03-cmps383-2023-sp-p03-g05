@@ -15,33 +15,7 @@ const Home = () => {
                   </div>
                 </div> */}
 
-                <div className="row m-4 p-2">
 
-                  <div class="col">
-
-                    <h1 class="display-5">We over 40 locations along our two rail lines</h1>
-                 
-                  </div>
-
-                </div>
-
-                <div className="row m-4 p-2">
-
-                  <div class="col">
-
-                    <Map></Map>
-                 
-                  </div>
-
-                </div>
-
-                <div className="row m-4 p-2">
-
-                  <div className="col">
-                    <h1 class="display-1">See our Stations</h1>
-                  </div>
-
-                </div>
 
 
 
