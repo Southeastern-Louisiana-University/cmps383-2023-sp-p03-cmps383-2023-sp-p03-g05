@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SP23.P03.Web.Data;
 
@@ -11,9 +12,11 @@ using SP23.P03.Web.Data;
 namespace SP23.P03.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230321214307_StartingTrainStationId")]
+    partial class StartingTrainStationId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -231,17 +234,10 @@ namespace SP23.P03.Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("EndingTrainStationId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("StartingTrainStationId")
+                    b.Property<int>("StartingTrainStationId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("EndingTrainStationId");
-
-                    b.HasIndex("StartingTrainStationId");
 
                     b.ToTable("Ticket");
                 });
@@ -326,21 +322,6 @@ namespace SP23.P03.Web.Migrations
                     b.Navigation("Role");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("SP23.P03.Web.Features.Ticket.Ticket", b =>
-                {
-                    b.HasOne("SP23.P03.Web.Features.TrainStations.TrainStation", "EndingTrainStation")
-                        .WithMany()
-                        .HasForeignKey("EndingTrainStationId");
-
-                    b.HasOne("SP23.P03.Web.Features.TrainStations.TrainStation", "StartingTrainStation")
-                        .WithMany()
-                        .HasForeignKey("StartingTrainStationId");
-
-                    b.Navigation("EndingTrainStation");
-
-                    b.Navigation("StartingTrainStation");
                 });
 
             modelBuilder.Entity("SP23.P03.Web.Features.TrainStations.TrainStation", b =>
