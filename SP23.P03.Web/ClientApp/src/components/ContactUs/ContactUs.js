@@ -1,4 +1,4 @@
-
+import { Button } from "react-bootstrap";
 const ContactUs = () => {
     return (
     <div className="container-fluid m-4 p-2">
@@ -49,6 +49,15 @@ const ContactUs = () => {
                     <label for="textArea">Write your message here:</label>
                     <textarea class="form-control" id="textArea" rows="3"></textarea>
                 </div>
+                </div>
+            </div>
+
+            <div class="row pt-4">
+                <div class="col-4">
+
+                </div>
+                <div class="col-4">
+                    <Button class="btn" style={{backgroundColor: '#0fbebd', color: '#710000'}}>Submit</Button>
                 </div>
             </div>
 
