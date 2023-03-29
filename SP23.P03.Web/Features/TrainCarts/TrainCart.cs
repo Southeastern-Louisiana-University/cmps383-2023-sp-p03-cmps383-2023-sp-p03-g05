@@ -1,6 +1,6 @@
-﻿namespace SP23.P03.Web.Features.TrainClasses;
+﻿namespace SP23.P03.Web.Features.TrainCarts;
 
-public class TrainClass
+public class TrainCart
 {
     public int Id { get; set; }
 

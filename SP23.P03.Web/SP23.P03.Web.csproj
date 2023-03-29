@@ -19,7 +19,6 @@
     <None Remove="Features\Tickets\" />
     <None Remove="Newtonsoft.Json" />
     <None Remove="Features\Trains\" />
-    <None Remove="Features\TrainClasses\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,7 +38,6 @@
   <ItemGroup>
     <Folder Include="Features\Tickets\" />
     <Folder Include="Features\Trains\" />
-    <Folder Include="Features\TrainClasses\" />
   </ItemGroup>
   <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
