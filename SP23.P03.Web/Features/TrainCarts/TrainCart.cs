@@ -6,13 +6,13 @@ public class TrainCart
 
     public string? ClassLetter { get; set; }
 
-    public int coach { get; set; }
+    public int? coach { get; set; }
 
-    public int firstClass { get; set; }
+    public int? firstClass { get; set; }
 
-    public int roomlet { get; set; }
+    public int? roomlet { get; set; }
 
-    public bool sleeper { get; set; }
+    public int? sleeper { get; set; }
 
     public bool dining { get; set; }
        
