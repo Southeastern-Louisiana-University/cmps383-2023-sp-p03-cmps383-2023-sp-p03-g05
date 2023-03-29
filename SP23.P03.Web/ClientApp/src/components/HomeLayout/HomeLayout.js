@@ -62,7 +62,7 @@ const HomeLayout = () => {
 
       <div class="card "  style={{ borderWidth:'medium', borderColor: '#710000', border: 'rounded', backgroundColor: '#f43f5e', height:'800px'}}> 
         <div class="card-img-top">
-          <img class="card-img-top "  src="./assets/trainconductor1.jpg" alt="Card image cap" ></img>
+          <img class="card-img-top "  src=".\assets\splash.png" alt="Card image c" ></img>
         </div>
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
