@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+// import { Container, Row, Col } from "react-bootstrap";
 import HomeFooter from "../HomeFooter/HomeFooter";
 
 const HomeLayout = () => {
@@ -17,7 +17,7 @@ const HomeLayout = () => {
       
 
         <span class="card text-white text-start m-1 pb-5" style={{fontFamily: 'Arial', backgroundColor: '#f3eed9', borderColor: '#f3eed9', borderWidth: 'medium'}} >
-          <img class="card-img" src="./assets/planyourtrip.jpg" alt="Card image" style={{maxHeight: '500px'}}></img>
+          <img class="card-img" src="./assets/planyourtrip.jpg" alt="Card" style={{maxHeight: '500px'}}></img>
           <span class="card-img-overlay">
               <span class="align-middle" style={{ fontFamily: 'Franklin Gothic Medium'}}>
                 <h1 class="card-title fw-bold m-1">LET US CONNECT YOU</h1>
@@ -35,7 +35,7 @@ const HomeLayout = () => {
 
         <div class="card 2-75" style={{ borderWidth:'medium', borderColor: '#710000', border: 'rounded', backgroundColor: '#f43f5e', height: '800px'}}>
         <div class="card-img-top">
-            <img class="card-img-top" src="./assets/trainstation1.jpg" alt="Card image cap" style={{height:'600px'}}></img>
+            <img class="card-img-top" src="./assets/trainstation1.jpg" alt="Card cap" style={{height:'600px'}}></img>
         </div>
         <div class="card-body">
           <h5 class="card-title">We have over 40 destinations in our Pilot!</h5>
@@ -49,7 +49,7 @@ const HomeLayout = () => {
 
         <div class="card  "  style={{ borderWidth:'medium', borderColor: '#710000', border: 'rounded', backgroundColor: '#f43f5e', height: '800px'}}>
         <div class="card-img-top ">
-            <img class="card-img-top "  src="./assets/trainfromabove.jpg" alt="Card image cap" style={{height:'600px'}}></img>
+            <img class="card-img-top "  src="./assets/trainfromabove.jpg" alt="Card cap" style={{height:'600px'}}></img>
         </div>
         <div class="card-body">
           <h5 class="card-title">Easier than Airlines</h5>
@@ -63,7 +63,7 @@ const HomeLayout = () => {
 
       <div class="card "  style={{ borderWidth:'medium', borderColor: '#710000', border: 'rounded', backgroundColor: '#f43f5e', height:'800px'}}> 
         <div class="card-img-top">
-          <img class="card-img-top "  src="./assets/trainconductor.jpg" alt="Card image cap" style={{height:'600px'}}></img>
+          <img class="card-img-top "  src="./assets/trainconductor.jpg" alt="Card cap" style={{height:'600px'}}></img>
         </div>
         <div class="card-body">
           <h5 class="card-title">An Experience</h5>

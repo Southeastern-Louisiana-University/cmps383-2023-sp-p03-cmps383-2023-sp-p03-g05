@@ -11,10 +11,10 @@ import NoPage from "./pages/NoPage";
 import Navbar from './components/Navbar/Navbar';
 import Tickets from './pages/Tickets';
 
-import HomeFooter from './components/HomeFooter/HomeFooter';
+// import HomeFooter from './components/HomeFooter/HomeFooter';
 import HomeLayout from './components/HomeLayout/HomeLayout';
 
-import ContactUs from './components/ContactUs/ContactUs';
+// import ContactUs from './components/ContactUs/ContactUs';
 
 
 function App() {
