@@ -78,16 +78,308 @@ public static class SeedHelper
             return;
         }
 
-        for (int i = 0; i < 3; i++)
-        {
-            dataContext.Set<TrainStation>()
+       
+        dataContext.Set<TrainStation>()
                 .Add(new TrainStation
                 {
                     Name = "Hammond",
                     Address = "1234 Place st"
                 });
-        }
 
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Meridian",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Laurel",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Hattiesburg",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Mobile",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Biloxi",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Slidell",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "New Orleans",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Picayune",
+                  Address = "1234 Place st"
+              });
+
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Yazoo City",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Jackson",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Hazelhurst",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "BrookHaven",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "McComb",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Hammond",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Baton Rouge",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Schriever",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "New Iberia",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Lafayette",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Lake Charles",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Beaumont",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Huston",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Galveston",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Prairie View",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Bryan",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Waco",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Nacogdoches",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Shreveport",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Marshall",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Texarkana",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Longview",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Mineola",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Tyler",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Mesquite",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Dallas",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "FortWorth",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Celburne",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Killeen",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Fort Hood",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Temple",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "Austin",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "San Marcos",
+                  Address = "1234 Place st"
+              });
+
+        dataContext.Set<TrainStation>()
+              .Add(new TrainStation
+              {
+                  Name = "San Antonio",
+                  Address = "1234 Place st"
+              });
         await dataContext.SaveChangesAsync();
     }
 }
