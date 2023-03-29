@@ -72,13 +72,13 @@ const Navbar = () => {
               className="dropdown-menu"
               aria-labelledby="navbarDropdownMenuLink"
             >
-              <a className="dropdown-item" href="#">
+              <a className="dropdown-item" href="/#">
                 Action
               </a>
-              <a className="dropdown-item" href="#">
+              <a className="dropdown-item" href="/#">
                 Another action
               </a>
-              <a className="dropdown-item" href="#">
+              <a className="dropdown-item" href="/#">
                 Something else here
               </a>
             </div>
