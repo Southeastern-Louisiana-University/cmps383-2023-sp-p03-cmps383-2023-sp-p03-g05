@@ -39,7 +39,7 @@ const HomeLayout = () => {
         </div>
         <div class="card-body">
           <h5 class="card-title">We have over 40 destinations in our Pilot!</h5>
-          <a href="#" class="btn" style={{backgroundColor: '#0fbebd', color: '#710000'}}>See Our Stations!</a>
+          <a href="/#" class="btn" style={{backgroundColor: '#0fbebd', color: '#710000'}}>See Our Stations!</a>
         </div>
       </div>
 
