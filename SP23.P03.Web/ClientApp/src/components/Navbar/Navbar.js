@@ -10,12 +10,14 @@ const Navbar = () => {
       <div className="container-fluid d-flex">
 
       <Button style={{backgroundColor: '#f43f5e', borderWidth: '0px'}}>
+        <Link className="navbar-brand" to="/">
         <img src="./assets/testlogo.png" alt="" width="80" height="50"></img>
+        </Link>
       </Button>
 
-      <Link className="navbar-brand" to="/">
+      {/* <Link className="navbar-brand" to="/">
         EnTrack
-      </Link>
+      </Link> */}
       <button
         className="navbar-toggler"
         type="button"
