@@ -486,12 +486,13 @@ public static class SeedHelper
         {
             ClassLetter = "A",
             coach = 168,
-
-
-
         };
 
-        
+        dataContext.Set<TrainCart>()
+                .Add(ClassA);
+
+      
+
 
         await dataContext.SaveChangesAsync();
     }
