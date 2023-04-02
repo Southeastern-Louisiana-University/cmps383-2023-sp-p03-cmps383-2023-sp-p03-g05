@@ -10,7 +10,7 @@ namespace SP23.P03.Web.Controllers;
 
 [Route("api/traincarts")]
 [ApiController]
-public class TrainCartController : ControllerBase
+public class TrainCartsController : ControllerBase
 {
     private readonly DbSet<TrainCart> trainCarts;
     private readonly DataContext dataContext;
@@ -22,7 +22,7 @@ public class TrainCartController : ControllerBase
     }
 
     [HttpGet]
-    public IQueryable<TrainCart> GetAllStations()
+    public IQueryable<TrainCartDto> GetAllStations()
     {
         return GetTrainCartDto(trainCarts);
     }
@@ -54,7 +54,7 @@ public class TrainCartController : ControllerBase
                 coach = x.coach,
                 firstClass = x.firstClass,
                 roomlet = x.roomlet,
-                sleeper = x.sleeper,
+                sleeper = x.sleeper, 
                 dining = x.dining
 
                

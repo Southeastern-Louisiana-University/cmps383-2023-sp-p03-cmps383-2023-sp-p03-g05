@@ -14,7 +14,7 @@ public class TrainCartDto
 
     public int? sleeper { get; set; }
 
-    public bool dining { get; set; }
+    public bool? dining { get; set; }
 
 
 

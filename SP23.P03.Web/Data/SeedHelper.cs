@@ -4,6 +4,7 @@ using SP23.P03.Web.Features.Authorization;
 using SP23.P03.Web.Features.Ticket;
 using SP23.P03.Web.Features.TrainStations;
 using SP23.P03.Web.Features.Tickets;
+using SP23.P03.Web.Features.TrainCarts;
 
 namespace SP23.P03.Web.Data;
 
@@ -479,6 +480,18 @@ public static class SeedHelper
         };
 
         dataContext.Set<Ticket>().Add(Ticket1);
+
+
+        var ClassA = new TrainCart
+        {
+            ClassLetter = "A",
+            coach = 168,
+
+
+
+        };
+
+        
 
         await dataContext.SaveChangesAsync();
     }

@@ -13,7 +13,6 @@
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Content Remove="$(SpaRoot)**" />
-    <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
     <None Remove="Microsoft.EntityFrameworkCore" />
     <None Remove="Features\Tickets\" />
@@ -38,6 +37,13 @@
   <ItemGroup>
     <Folder Include="Features\Tickets\" />
     <Folder Include="Features\Trains\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Properties\ServiceDependencies\selu383-sp23-p03-g05 - Zip Deploy\profile.arm.json">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
   <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
