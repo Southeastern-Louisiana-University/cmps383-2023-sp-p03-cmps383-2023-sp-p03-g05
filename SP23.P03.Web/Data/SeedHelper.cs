@@ -489,10 +489,40 @@ public static class SeedHelper
         };
 
         dataContext.Set<TrainCart>()
-                .Add(ClassA);
+               .Add(ClassA);
 
-      
+        var ClassB = new TrainCart
+        {
+            ClassLetter = "B",
+            coach = 84,
+            firstClass = 42
+        };
 
+        dataContext.Set<TrainCart>()
+                .Add(ClassB);
+
+        var ClassC = new TrainCart
+        {
+            ClassLetter = "C",
+            coach = 42,
+            firstClass = 62,
+            dining = true
+        };
+
+        dataContext.Set<TrainCart>()
+                .Add(ClassC);
+
+        var ClassD = new TrainCart
+        {
+            ClassLetter = "D",
+            firstClass = 42,
+            dining = true,
+            sleeper = 10,
+            roomlet = 4
+
+        };
+        dataContext.Set<TrainCart>()
+               .Add(ClassD);
 
         await dataContext.SaveChangesAsync();
     }
