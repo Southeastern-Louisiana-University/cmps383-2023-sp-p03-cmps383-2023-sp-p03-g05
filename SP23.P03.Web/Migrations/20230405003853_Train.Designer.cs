@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SP23.P03.Web.Data;
 
@@ -11,9 +12,11 @@ using SP23.P03.Web.Data;
 namespace SP23.P03.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230405003853_Train")]
+    partial class Train
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -304,39 +307,6 @@ namespace SP23.P03.Web.Migrations
                     b.ToTable("TrainStation");
                 });
 
-            modelBuilder.Entity("SP23.P03.Web.Features.Trains.Train", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("TrainCart1Id")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("TrainCart2Id")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("TrainCart3Id")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("TrainCart4Id")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TrainCart1Id");
-
-                    b.HasIndex("TrainCart2Id");
-
-                    b.HasIndex("TrainCart3Id");
-
-                    b.HasIndex("TrainCart4Id");
-
-                    b.ToTable("Train");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("SP23.P03.Web.Features.Authorization.Role", null)
@@ -414,33 +384,6 @@ namespace SP23.P03.Web.Migrations
                         .HasForeignKey("ManagerId");
 
                     b.Navigation("Manager");
-                });
-
-            modelBuilder.Entity("SP23.P03.Web.Features.Trains.Train", b =>
-                {
-                    b.HasOne("SP23.P03.Web.Features.TrainCarts.TrainCart", "TrainCart1")
-                        .WithMany()
-                        .HasForeignKey("TrainCart1Id");
-
-                    b.HasOne("SP23.P03.Web.Features.TrainCarts.TrainCart", "TrainCart2")
-                        .WithMany()
-                        .HasForeignKey("TrainCart2Id");
-
-                    b.HasOne("SP23.P03.Web.Features.TrainCarts.TrainCart", "TrainCart3")
-                        .WithMany()
-                        .HasForeignKey("TrainCart3Id");
-
-                    b.HasOne("SP23.P03.Web.Features.TrainCarts.TrainCart", "TrainCart4")
-                        .WithMany()
-                        .HasForeignKey("TrainCart4Id");
-
-                    b.Navigation("TrainCart1");
-
-                    b.Navigation("TrainCart2");
-
-                    b.Navigation("TrainCart3");
-
-                    b.Navigation("TrainCart4");
                 });
 
             modelBuilder.Entity("SP23.P03.Web.Features.Authorization.Role", b =>
