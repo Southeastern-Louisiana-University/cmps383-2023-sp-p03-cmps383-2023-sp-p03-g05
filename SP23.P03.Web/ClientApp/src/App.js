@@ -22,7 +22,7 @@ function App() {
     
     //Removed s in className to make them stop using the defualt react.
     <div className="App" style={{backgroundColor: '#f3eed9'}}>
-      <header class="border m-3 p-3">
+      <header class="border">
         {/* <Home></Home> */}
         
         <BrowserRouter >
