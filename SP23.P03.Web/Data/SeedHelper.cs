@@ -4,6 +4,8 @@ using SP23.P03.Web.Features.Authorization;
 using SP23.P03.Web.Features.Ticket;
 using SP23.P03.Web.Features.TrainStations;
 using SP23.P03.Web.Features.Tickets;
+using SP23.P03.Web.Features.TrainCarts;
+using SP23.P03.Web.Features.Trains;
 
 namespace SP23.P03.Web.Data;
 
@@ -90,10 +92,10 @@ public static class SeedHelper
     {
         var trainStations = dataContext.Set<TrainStation>();
 
-/*        if (await trainStations.AnyAsync())
+       if (await trainStations.AnyAsync())
         { 
             return;
-        }*/
+        }
 
         var hammond = new TrainStation
         {
@@ -479,6 +481,62 @@ public static class SeedHelper
         };
 
         dataContext.Set<Ticket>().Add(Ticket1);
+
+
+        var ClassA = new TrainCart
+        {
+            ClassLetter = "A",
+            coach = 168,
+        };
+
+        dataContext.Set<TrainCart>()
+               .Add(ClassA);
+
+        var ClassB = new TrainCart
+        {
+            ClassLetter = "B",
+            coach = 84,
+            firstClass = 42
+        };
+
+        dataContext.Set<TrainCart>()
+                .Add(ClassB);
+
+        var ClassC = new TrainCart
+        {
+            ClassLetter = "C",
+            coach = 42,
+            firstClass = 62,
+            dining = true
+        };
+
+        dataContext.Set<TrainCart>()
+                .Add(ClassC);
+
+        var ClassD = new TrainCart
+        {
+            ClassLetter = "D",
+            firstClass = 42,
+            dining = true,
+            sleeper = 10,
+            roomlet = 4
+
+        };
+        dataContext.Set<TrainCart>()
+               .Add(ClassD);
+
+        var Train1 = new Train
+        {
+
+            TrainCart1 = ClassA,
+            TrainCart2 = ClassB,
+            TrainCart3 = ClassC,
+            TrainCart4 = ClassD
+
+        };
+
+        dataContext.Set<Train>()
+               .Add(Train1);
 
         await dataContext.SaveChangesAsync();
     }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SP23.P03.Web.Data;
 
@@ -11,9 +12,11 @@ using SP23.P03.Web.Data;
 namespace SP23.P03.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230405004325_TrainDBSET")]
+    partial class TrainDBSET
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -231,13 +234,7 @@ namespace SP23.P03.Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTimeOffset?>("DepartureTime")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<int?>("EndingTrainStationId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("PassengerId")
                         .HasColumnType("int");
 
                     b.Property<int?>("StartingTrainStationId")
@@ -246,8 +243,6 @@ namespace SP23.P03.Web.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("EndingTrainStationId");
-
-                    b.HasIndex("PassengerId");
 
                     b.HasIndex("StartingTrainStationId");
 
@@ -406,17 +401,11 @@ namespace SP23.P03.Web.Migrations
                         .WithMany()
                         .HasForeignKey("EndingTrainStationId");
 
-                    b.HasOne("SP23.P03.Web.Features.Authorization.User", "Passenger")
-                        .WithMany()
-                        .HasForeignKey("PassengerId");
-
                     b.HasOne("SP23.P03.Web.Features.TrainStations.TrainStation", "StartingTrainStation")
                         .WithMany()
                         .HasForeignKey("StartingTrainStationId");
 
                     b.Navigation("EndingTrainStation");
-
-                    b.Navigation("Passenger");
 
                     b.Navigation("StartingTrainStation");
                 });
