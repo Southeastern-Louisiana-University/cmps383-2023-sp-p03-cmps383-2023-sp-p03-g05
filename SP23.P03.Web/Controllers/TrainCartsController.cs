@@ -5,6 +5,7 @@ using SP23.P03.Web.Data;
 using SP23.P03.Web.Extensions;
 using SP23.P03.Web.Features.Authorization;
 using SP23.P03.Web.Features.TrainCarts;
+using SP23.P03.Web.Features.TrainStations;
 
 namespace SP23.P03.Web.Controllers;
 
@@ -29,7 +30,7 @@ public class TrainCartsController : ControllerBase
 
     [HttpGet]
     [Route("{id}")]
-    public ActionResult<TrainCartDto> GetStationById(int id)
+    public ActionResult<TrainCartDto> GetTrainCartById(int id)
     {
         var result = GetTrainCartDto(trainCarts.Where(x => x.Id == id)).FirstOrDefault();
         if (result == null)
@@ -40,9 +41,37 @@ public class TrainCartsController : ControllerBase
         return Ok(result);
     }
 
-    
+    //[HttpPost]
+    //[Authorize(Roles = RoleNames.Admin)]
+    //public ActionResult<TrainCartDto> CreateTrainCart(TrainCartDto dto)
+    //{
+    //    if (IsInvalid(dto))
+    //    {
+    //        return BadRequest();
+    //    }
 
-   
+    //    var trainCart = new TrainCart
+    //    {
+    //        ClassLetter = dto.ClassLetter,
+    //        coach = dto.coach,
+    //        ManagerId = dto.ManagerId,
+    //    };
+    //    trainCart.Add(trainCart);
+
+    //    dataContext.SaveChanges();
+
+    //    dto.Id = trainCart.Id;
+
+    //    return CreatedAtAction(nameof(GetTrainCartById), new { id = dto.Id }, dto);
+    //}
+
+    //private bool IsInvalid(TrainCartDto dto)
+    //{
+    //    return string.IsNullOrWhiteSpace(dto.ClassLetter);
+              
+               
+    //}
+
 
     private static IQueryable<TrainCartDto> GetTrainCartDto(IQueryable<TrainCart> stations)
     {

@@ -36,7 +36,7 @@ namespace SP23.P03.Web.Controllers;
 
         [HttpGet]
         [Route("{id}")]
-        public ActionResult<TicketDto> GetStationById(int id)
+        public ActionResult<TicketDto> GetTicketId(int id)
         {
             var result = GetTicketDtos(tickets.Where(x => x.Id == id)).FirstOrDefault();
             if (result == null)
@@ -47,10 +47,53 @@ namespace SP23.P03.Web.Controllers;
             return Ok(result);
         }
 
+    [HttpPost]
+    [Authorize(Roles = RoleNames.Admin)]
+    public ActionResult<TicketDto> CreateTicket(TicketDto dto)
+    {
+
+        if (IsInvalid(dto))
+        {
+            return BadRequest();
+        }
+
+        var ticket = new Ticket
+        {
+            StartingTrainStation = new TrainStation
+            {
+                Id = dto.StartingTrainStation.Id,
+                Name = dto.StartingTrainStation.Name,
+                Address = dto.StartingTrainStation.Address
+            },
+            EndingTrainStation = new TrainStation
+            {
+                Id = dto.StartingTrainStation.Id,
+                Name = dto.StartingTrainStation.Name,
+                Address = dto.StartingTrainStation.Address
+            },
+        };
+        tickets.Add(ticket);
+
+        dataContext.SaveChanges();
+
+        dto.Id = ticket.Id;
+
+        return CreatedAtAction(nameof(GetTicketId), new { id = dto.Id }, dto);
+    }
 
 
 
-        private static IQueryable<TicketDto> GetTicketDtos(IQueryable<Ticket> tickets)
+    private bool IsInvalid(TicketDto dto)
+    {
+        return dto.StartingTrainStation.Id > 0 ||
+            dto.EndingTrainStation.Id > 0;
+               
+               
+    }
+
+
+
+    private static IQueryable<TicketDto> GetTicketDtos(IQueryable<Ticket> tickets)
         {
         return tickets
             .Select(x => new TicketDto
