@@ -41,36 +41,37 @@ public class TrainCartsController : ControllerBase
         return Ok(result);
     }
 
-    //[HttpPost]
-    //[Authorize(Roles = RoleNames.Admin)]
-    //public ActionResult<TrainCartDto> CreateTrainCart(TrainCartDto dto)
-    //{
-    //    if (IsInvalid(dto))
-    //    {
-    //        return BadRequest();
-    //    }
+    [HttpPost]
+    [Authorize(Roles = RoleNames.Admin)]
+    public ActionResult<TrainCartDto> CreateTrainCart(TrainCartDto dto)
+    {
+        if (IsInvalid(dto))
+        {
+            return BadRequest();
+        }
 
-    //    var trainCart = new TrainCart
-    //    {
-    //        ClassLetter = dto.ClassLetter,
-    //        coach = dto.coach,
-    //        ManagerId = dto.ManagerId,
-    //    };
-    //    trainCart.Add(trainCart);
+        var trainCart = new TrainCart
+        {
+            ClassLetter = dto.ClassLetter,
+            coach = dto.coach,
+            firstClass = dto.firstClass,
+            roomlet = dto.roomlet,
+            sleeper = dto.sleeper,
+            dining = dto.dining
+        };
+        trainCarts.Add(trainCart);
 
-    //    dataContext.SaveChanges();
+        dataContext.SaveChanges();
 
-    //    dto.Id = trainCart.Id;
+        dto.Id = trainCart.Id;
 
-    //    return CreatedAtAction(nameof(GetTrainCartById), new { id = dto.Id }, dto);
-    //}
+        return CreatedAtAction(nameof(GetTrainCartById), new { id = dto.Id }, dto);
+    }
 
-    //private bool IsInvalid(TrainCartDto dto)
-    //{
-    //    return string.IsNullOrWhiteSpace(dto.ClassLetter);
-              
-               
-    //}
+    private bool IsInvalid(TrainCartDto dto)
+    {
+        return string.IsNullOrWhiteSpace(dto.ClassLetter);
+    }
 
 
     private static IQueryable<TrainCartDto> GetTrainCartDto(IQueryable<TrainCart> stations)
