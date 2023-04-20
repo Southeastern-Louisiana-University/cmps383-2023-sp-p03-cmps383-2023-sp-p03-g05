@@ -7,8 +7,8 @@ using SP23.P03.Web.Features.Authorization;
 using SP23.P03.Web.Features.Ticket;
 using SP23.P03.Web.Features.Tickets;
 using SP23.P03.Web.Features.TrainStations;
-
-
+using System.Collections.Immutable;
+using System.Linq;
 
 namespace SP23.P03.Web.Controllers;
 
@@ -93,18 +93,24 @@ namespace SP23.P03.Web.Controllers;
             .Select(x => new TicketDto
             {
                 Id = x.Id,
-                StartingTrainStation = new TrainStation
+                StartingTrainStation = new TrainStationDto
                 {
                     Id = x.StartingTrainStation.Id,
                     Name = x.StartingTrainStation.Name,
                     Address = x.StartingTrainStation.Address
                 },
-                EndingTrainStation = new TrainStation
+                EndingTrainStation = new TrainStationDto
                 {
                     Id = x.EndingTrainStation.Id,
                     Name = x.EndingTrainStation.Name,
                     Address = x.EndingTrainStation.Address
                 },
+                Passenger= new UserDto {
+                    Id = x.Passenger.Id,
+                    UserName = x.Passenger.UserName,
+                    Roles = x.Passenger.Roles.Select(x => x.Role.Name).ToArray(),
+                },
+                DepartureTime= x.DepartureTime,
             });
         }
     private TrainStation GetTrainStation(int Id) {

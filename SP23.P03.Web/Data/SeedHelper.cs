@@ -481,31 +481,42 @@ public static class SeedHelper
             StartingTrainStation = hammond,
             EndingTrainStation = mcComb,
             Passenger = sue,
+            DepartureTime = new DateTimeOffset(2023, 4, 30, 10, 30,0,new TimeSpan(-6,0,0))
         };
         var Ticket2 = new Ticket {
             StartingTrainStation = lafayette,
             EndingTrainStation = newIberia,
             Passenger = bob,
+            DepartureTime = new DateTimeOffset(2023, 4, 29, 9, 30, 0, new TimeSpan(-6, 0, 0))
+
         };
         var Ticket3 = new Ticket {
             StartingTrainStation = lakeCharles,
             EndingTrainStation = batonRouge,
             Passenger = bob,
+            DepartureTime = new DateTimeOffset(2023, 5, 10, 12, 00, 0, new TimeSpan(-6, 0, 0))
+
         };
         var Ticket4 = new Ticket {
             StartingTrainStation = jackson,
             EndingTrainStation = mobile,
             Passenger = adminUser,
+            DepartureTime = new DateTimeOffset(2023, 4, 27, 17, 30, 0, new TimeSpan(-6, 0, 0))
+
         };
         var Ticket5 = new Ticket {
             StartingTrainStation = shreveport,
             EndingTrainStation = dallas,
             Passenger = sue,
+            DepartureTime = new DateTimeOffset(2023, 5, 27, 7, 15, 0, new TimeSpan(-6, 0, 0))
+
         };
         var Ticket6 = new Ticket {
             StartingTrainStation = hattiesburg,
             EndingTrainStation = austin,
             Passenger = sue,
+            DepartureTime = new DateTimeOffset(2023, 6, 15, 9, 45, 0, new TimeSpan(-6, 0, 0))
+
         };
 
         dataContext.Set<Ticket>().Add(Ticket1);
