@@ -42,7 +42,6 @@ public class TrainCartsController : ControllerBase
     }
 
     [HttpPost]
-    [Authorize(Roles = RoleNames.Admin)]
     public ActionResult<TrainCartDto> CreateTrainCart(TrainCartDto dto)
     {
         if (IsInvalid(dto))

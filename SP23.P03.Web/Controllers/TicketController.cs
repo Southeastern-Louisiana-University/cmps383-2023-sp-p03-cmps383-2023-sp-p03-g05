@@ -48,7 +48,7 @@ namespace SP23.P03.Web.Controllers;
         }
 
     [HttpPost]
-    [Authorize(Roles = RoleNames.Admin)]
+    
     public ActionResult<TicketDto> CreateTicket(TicketDto dto)
     {
 
