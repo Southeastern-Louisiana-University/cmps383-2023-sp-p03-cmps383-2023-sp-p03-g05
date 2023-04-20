@@ -43,7 +43,12 @@ namespace SP23.P03.Web.Controllers;
             if (userId == null) {
                 return Unauthorized();
             }
-            return Ok(GetTicketDtos(tickets.Where(x => x.Passenger.Id == userId)));
+
+            var result = GetTicketDtos(tickets.Where(x => x.Passenger.Id == userId));
+            if(result == null) {
+                return NotFound();
+            }
+            return Ok(result);
         }
 
         [HttpGet]

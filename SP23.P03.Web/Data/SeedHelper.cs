@@ -11,6 +11,9 @@ namespace SP23.P03.Web.Data;
 
 public static class SeedHelper
 {
+    public static User bob;
+    public static User adminUser;
+    public static User sue;
     public static async Task MigrateAndSeed(IServiceProvider serviceProvider)
     {
         var dataContext = serviceProvider.GetRequiredService<DataContext>();
@@ -20,7 +23,7 @@ public static class SeedHelper
         await AddRoles(serviceProvider);
         await AddUsers(serviceProvider);
 
-        await AddTrainStation(dataContext);
+        await AddTrainStationAndTickets(dataContext);
         await AddTicket(dataContext);
     }
 
@@ -34,21 +37,21 @@ public static class SeedHelper
             return;
         }
 
-        var adminUser = new User
+        adminUser = new User
         {
             UserName = "galkadi"
         };
         await userManager.CreateAsync(adminUser, defaultPassword);
         await userManager.AddToRoleAsync(adminUser, RoleNames.Admin);
 
-        var bob = new User
+        bob = new User
         {
             UserName = "bob"
         };
         await userManager.CreateAsync(bob, defaultPassword);
         await userManager.AddToRoleAsync(bob, RoleNames.User);
 
-        var sue = new User
+        sue = new User
         {
             UserName = "sue"
         };
@@ -88,11 +91,11 @@ public static class SeedHelper
         await dataContext.SaveChangesAsync();
     }
 
-        private static async Task AddTrainStation(DataContext dataContext)
+    private static async Task AddTrainStationAndTickets(DataContext dataContext)
     {
         var trainStations = dataContext.Set<TrainStation>();
 
-       if (await trainStations.AnyAsync())
+        if (await trainStations.AnyAsync())
         { 
             return;
         }
@@ -474,13 +477,43 @@ public static class SeedHelper
         dataContext.Set<TrainStation>()
                 .Add(sanAntonio);
 
-        var Ticket1 = new Ticket
-        {
+        var Ticket1 = new Ticket {
             StartingTrainStation = hammond,
-            EndingTrainStation = mcComb
+            EndingTrainStation = mcComb,
+            Passenger = sue,
+        };
+        var Ticket2 = new Ticket {
+            StartingTrainStation = lafayette,
+            EndingTrainStation = newIberia,
+            Passenger = bob,
+        };
+        var Ticket3 = new Ticket {
+            StartingTrainStation = lakeCharles,
+            EndingTrainStation = batonRouge,
+            Passenger = bob,
+        };
+        var Ticket4 = new Ticket {
+            StartingTrainStation = jackson,
+            EndingTrainStation = mobile,
+            Passenger = adminUser,
+        };
+        var Ticket5 = new Ticket {
+            StartingTrainStation = shreveport,
+            EndingTrainStation = dallas,
+            Passenger = sue,
+        };
+        var Ticket6 = new Ticket {
+            StartingTrainStation = hattiesburg,
+            EndingTrainStation = austin,
+            Passenger = sue,
         };
 
         dataContext.Set<Ticket>().Add(Ticket1);
+        dataContext.Set<Ticket>().Add(Ticket2);
+        dataContext.Set<Ticket>().Add(Ticket3);
+        dataContext.Set<Ticket>().Add(Ticket4);
+        dataContext.Set<Ticket>().Add(Ticket5);
+        dataContext.Set<Ticket>().Add(Ticket6);
 
 
         var ClassA = new TrainCart
