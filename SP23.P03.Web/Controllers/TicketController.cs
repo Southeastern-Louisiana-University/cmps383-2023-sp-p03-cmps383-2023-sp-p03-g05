@@ -18,7 +18,7 @@ namespace SP23.P03.Web.Controllers;
 
     public class TicketController : ControllerBase
     {
-
+        private readonly DbSet<TrainStation> stations;
         private readonly DbSet<Ticket> tickets;
         private readonly DataContext dataContext;
 
@@ -26,17 +26,29 @@ namespace SP23.P03.Web.Controllers;
         {
             this.dataContext = dataContext;
             tickets = dataContext.Set<Ticket>();
-        }
+            stations = dataContext.Set<TrainStation>();
 
-        [HttpGet]
+    }
+
+    [HttpGet]
         public IQueryable<TicketDto> GetAllTickets()
         {
             return GetTicketDtos(tickets);
         }
 
         [HttpGet]
+        [Route("GetAllForUser")]
+        public ActionResult<TicketDto> GetAllTicketsForUser() {
+            var userId = User.GetCurrentUserId();
+            if (userId == null) {
+                return Unauthorized();
+            }
+            return Ok(GetTicketDtos(tickets.Where(x => x.Passenger.Id == userId)));
+        }
+
+        [HttpGet]
         [Route("{id}")]
-        public ActionResult<TicketDto> GetStationById(int id)
+        public ActionResult<TicketDto> GetTicketById(int id)
         {
             var result = GetTicketDtos(tickets.Where(x => x.Id == id)).FirstOrDefault();
             if (result == null)
@@ -47,23 +59,42 @@ namespace SP23.P03.Web.Controllers;
             return Ok(result);
         }
 
+        [HttpPost]
+        [Authorize(Roles = RoleNames.User)]
+        public ActionResult<TicketDto> CreateTicket(TicketDto dto) {
+            if (IsInvalid(dto)) {
+                return BadRequest();
+            }
+
+            var ticket = new Ticket {
+                StartingTrainStation = GetTrainStation(dto.StartingTrainStation.Id),
+                EndingTrainStation =  GetTrainStation(dto.EndingTrainStation.Id)
+            };
+            tickets.Add(ticket);
+
+            dataContext.SaveChanges();
+
+            dto.Id = ticket.Id;
+
+            return CreatedAtAction(nameof(GetTicketById), new { id = dto.Id }, dto);
+        }
 
 
 
-        private static IQueryable<TicketDto> GetTicketDtos(IQueryable<Ticket> tickets)
+
+    private static IQueryable<TicketDto> GetTicketDtos(IQueryable<Ticket> tickets)
         {
         return tickets
             .Select(x => new TicketDto
             {
                 Id = x.Id,
-                //StartingTrainStationId = x.StartingTrainStationId
-                StartingTrainStation = new TrainStationDto
+                StartingTrainStation = new TrainStation
                 {
                     Id = x.StartingTrainStation.Id,
                     Name = x.StartingTrainStation.Name,
                     Address = x.StartingTrainStation.Address
                 },
-                EndingTrainStation = new TrainStationDto
+                EndingTrainStation = new TrainStation
                 {
                     Id = x.EndingTrainStation.Id,
                     Name = x.EndingTrainStation.Name,
@@ -71,5 +102,14 @@ namespace SP23.P03.Web.Controllers;
                 },
             });
         }
-
+    private TrainStation GetTrainStation(int Id) {
+        return stations.Where(x => x.Id == Id).FirstOrDefault();
     }
+
+    private bool IsInvalid(TicketDto dto) {
+        return dto.StartingTrainStation.Id == null ||
+               dto.EndingTrainStation.Id == null;
+    }
+
+
+}
