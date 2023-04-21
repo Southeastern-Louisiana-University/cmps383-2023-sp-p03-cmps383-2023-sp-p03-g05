@@ -10,10 +10,10 @@ public class Ticket
 
     //public int StartingTrainStationId { get; set; }
 
-    public TrainStation? StartingTrainStation { get; set; }
-    public TrainStation? EndingTrainStation { get; set; }
-    public User? Passenger { get; set; }
-    public DateTimeOffset? DepartureTime { get; set; }
+    public TrainStation StartingTrainStation { get; set; }
+    public TrainStation EndingTrainStation { get; set; }
+    public User Passenger { get; set; }
+    public DateTimeOffset DepartureTime { get; set; }
 }
 
 
