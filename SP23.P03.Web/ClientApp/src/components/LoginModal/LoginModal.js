@@ -17,7 +17,9 @@ const handleSubmit = (e) =>
     axios.post(`${baseUrl}/api/authentication/login`, { username, password })
     .then((response) => {
         console.log(response.data.userName);
+        
     });
+    
 }
 
     return (
