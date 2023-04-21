@@ -95,10 +95,10 @@ public static class SeedHelper
     {
         var trainStations = dataContext.Set<TrainStation>();
 
-        if (await trainStations.AnyAsync())
+/*        if (await trainStations.AnyAsync())
         { 
             return;
-        }
+        }*/
 
         var hammond = new TrainStation
         {
