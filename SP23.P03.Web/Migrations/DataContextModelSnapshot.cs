@@ -231,16 +231,16 @@ namespace SP23.P03.Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTimeOffset>("DepartureTime")
+                    b.Property<DateTimeOffset?>("DepartureTime")
                         .HasColumnType("datetimeoffset");
 
-                    b.Property<int>("EndingTrainStationId")
+                    b.Property<int?>("EndingTrainStationId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PassengerId")
+                    b.Property<int?>("PassengerId")
                         .HasColumnType("int");
 
-                    b.Property<int>("StartingTrainStationId")
+                    b.Property<int?>("StartingTrainStationId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -251,38 +251,7 @@ namespace SP23.P03.Web.Migrations
 
                     b.HasIndex("StartingTrainStationId");
 
-                    b.ToTable("Ticket");
-                });
-
-            modelBuilder.Entity("SP23.P03.Web.Features.TrainCarts.TrainCart", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ClassLetter")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("coach")
-                        .HasColumnType("int");
-
-                    b.Property<bool?>("dining")
-                        .HasColumnType("bit");
-
-                    b.Property<int?>("firstClass")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("roomlet")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("sleeper")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TrainCart");
+                    b.ToTable("Ticket", (string)null);
                 });
 
             modelBuilder.Entity("SP23.P03.Web.Features.TrainStations.TrainStation", b =>
@@ -309,40 +278,7 @@ namespace SP23.P03.Web.Migrations
 
                     b.HasIndex("ManagerId");
 
-                    b.ToTable("TrainStation");
-                });
-
-            modelBuilder.Entity("SP23.P03.Web.Features.Trains.Train", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("TrainCart1Id")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("TrainCart2Id")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("TrainCart3Id")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("TrainCart4Id")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TrainCart1Id");
-
-                    b.HasIndex("TrainCart2Id");
-
-                    b.HasIndex("TrainCart3Id");
-
-                    b.HasIndex("TrainCart4Id");
-
-                    b.ToTable("Train");
+                    b.ToTable("TrainStation", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -404,21 +340,15 @@ namespace SP23.P03.Web.Migrations
                 {
                     b.HasOne("SP23.P03.Web.Features.TrainStations.TrainStation", "EndingTrainStation")
                         .WithMany()
-                        .HasForeignKey("EndingTrainStationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EndingTrainStationId");
 
                     b.HasOne("SP23.P03.Web.Features.Authorization.User", "Passenger")
                         .WithMany()
-                        .HasForeignKey("PassengerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PassengerId");
 
                     b.HasOne("SP23.P03.Web.Features.TrainStations.TrainStation", "StartingTrainStation")
                         .WithMany()
-                        .HasForeignKey("StartingTrainStationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("StartingTrainStationId");
 
                     b.Navigation("EndingTrainStation");
 
@@ -434,33 +364,6 @@ namespace SP23.P03.Web.Migrations
                         .HasForeignKey("ManagerId");
 
                     b.Navigation("Manager");
-                });
-
-            modelBuilder.Entity("SP23.P03.Web.Features.Trains.Train", b =>
-                {
-                    b.HasOne("SP23.P03.Web.Features.TrainCarts.TrainCart", "TrainCart1")
-                        .WithMany()
-                        .HasForeignKey("TrainCart1Id");
-
-                    b.HasOne("SP23.P03.Web.Features.TrainCarts.TrainCart", "TrainCart2")
-                        .WithMany()
-                        .HasForeignKey("TrainCart2Id");
-
-                    b.HasOne("SP23.P03.Web.Features.TrainCarts.TrainCart", "TrainCart3")
-                        .WithMany()
-                        .HasForeignKey("TrainCart3Id");
-
-                    b.HasOne("SP23.P03.Web.Features.TrainCarts.TrainCart", "TrainCart4")
-                        .WithMany()
-                        .HasForeignKey("TrainCart4Id");
-
-                    b.Navigation("TrainCart1");
-
-                    b.Navigation("TrainCart2");
-
-                    b.Navigation("TrainCart3");
-
-                    b.Navigation("TrainCart4");
                 });
 
             modelBuilder.Entity("SP23.P03.Web.Features.Authorization.Role", b =>
