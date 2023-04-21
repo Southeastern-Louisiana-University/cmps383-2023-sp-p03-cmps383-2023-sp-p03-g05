@@ -81,10 +81,10 @@ public static class SeedHelper
     {
         var tickets = dataContext.Set<Ticket>();
 
-/*        if (await tickets.AnyAsync())
+        if (await tickets.AnyAsync())
         {
             return;
-        }*/
+        }
 
 
 
@@ -94,8 +94,9 @@ public static class SeedHelper
     private static async Task AddTrainStationAndTickets(DataContext dataContext)
     {
         var trainStations = dataContext.Set<TrainStation>();
+        var tickets = dataContext.Set<Ticket>();
 
-        if (await trainStations.AnyAsync())
+        if (await trainStations.AnyAsync() && await tickets.AnyAsync())
         { 
             return;
         }
