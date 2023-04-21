@@ -1,5 +1,5 @@
 // import Map from "../components/Map/Map";
-import Stations from "../components/Stations";
+
 
 
 const Home = () => {

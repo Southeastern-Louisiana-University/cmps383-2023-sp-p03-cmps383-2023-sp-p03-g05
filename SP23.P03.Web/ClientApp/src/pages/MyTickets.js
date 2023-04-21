@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
-import { Table } from "react-bootstrap";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
+import { Table, Row, Col } from 'react-bootstrap'
 
 
 const MyTickets = () => {
-const baseUrl = "localhost:/3000"
+const baseUrl = "https://selu383-sp23-p03-g05.azurewebsites.net"
 
 const [ticket, setTicket] = useState([]);
 
