@@ -22,7 +22,7 @@ const Home = () => {
                 <div className="row m-4 p-2">
 
                   <div className="col">
-                    <Stations></Stations>
+                    {/* <Stations></Stations> */}
                   </div>
 
                 </div>
