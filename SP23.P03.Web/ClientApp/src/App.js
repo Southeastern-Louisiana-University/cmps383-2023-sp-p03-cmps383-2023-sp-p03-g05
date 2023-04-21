@@ -13,6 +13,7 @@ import Tickets from './pages/Tickets';
 
 // import HomeFooter from './components/HomeFooter/HomeFooter';
 import HomeLayout from './components/HomeLayout/HomeLayout';
+import MyTickets from './pages/MyTickets';
 
 // import ContactUs from './components/ContactUs/ContactUs';
 
@@ -22,7 +23,7 @@ function App() {
     
     //Removed s in className to make them stop using the defualt react.
     <div className="App" style={{backgroundColor: '#f3eed9'}}>
-      <header class="border m-3 p-3">
+      <header class="border">
         {/* <Home></Home> */}
         
         <BrowserRouter >
@@ -32,6 +33,7 @@ function App() {
               <Route index element={<Home />} />
               <Route path="tickets" element={<Tickets />} />
               <Route path="contact" element={<Contact />} />
+              <Route path="myTickets" element={<MyTickets />} />
               <Route path="*" element={<NoPage />} />
             {/* </Route> */}
           </Routes>
