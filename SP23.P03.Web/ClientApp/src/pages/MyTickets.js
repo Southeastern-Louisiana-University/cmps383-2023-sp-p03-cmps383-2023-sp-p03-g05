@@ -15,7 +15,7 @@ useEffect(() => {
         {
             setTicket(response.data);
         })
-})
+}, [])
 
 return (
     <>
