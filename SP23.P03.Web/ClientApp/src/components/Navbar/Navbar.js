@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './Navbar.css';
 import { Button} from "react-bootstrap";
+import LoginModal from "../LoginModal/LoginModal";
 
 const Navbar = () => {
+  const [modalShow, setModalShow] = React.useState(false);
+
   return (
     
     <nav className="navbar navbar-container navbar-expand-md navbar-light align-items-center" style={{backgroundColor: "#f43f5e"}}>
@@ -11,7 +14,7 @@ const Navbar = () => {
 
       <Button style={{backgroundColor: '#f43f5e', borderWidth: '0px'}}>
         <Link className="navbar-brand" to="/">
-        <img src="./assets/testlogo.png" alt="" width="80" height="50"></img>
+        <img src="./assets/EnTrackLogo_Light_NoWords.ico" alt="" width="80" height="50"></img>
         </Link>
       </Button>
 
@@ -47,69 +50,38 @@ const Navbar = () => {
           </button>
           </li>
           <li className="nav-item">
-            <button className="navvar-toggler btn" type="button">
+          <button className="navvar-toggler btn" type="button">
             <Link className="nav-link" href="#contact" to="contact" >
               Contact
             </Link>
           </button>
           </li>
-          <li className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#dropdown-menu"
-              id="navbarDropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <button className="navvar-toggler btn" type="button">
-                Login
-              </button>
-            </a>
-          
 
-            <div
-              className="dropdown-menu"
-              aria-labelledby="navbarDropdownMenuLink"
-            >
-              <a className="dropdown-item" href="/#">
-                Action
-              </a>
-              <a className="dropdown-item" href="/#">
-                Another action
-              </a>
-              <a className="dropdown-item" href="/#">
-                Something else here
-              </a>
-            </div>
+          <li>
+            <button className="navvar-toggler btn" type="button">
+              <Link className="nav-link" onClick={() => setModalShow(true)}>
+                Login
+              </Link>
+            </button>
+            <LoginModal
+              show={modalShow}
+              onHide={() => setModalShow(false)}
+            />
           </li>
+
+          <li className='nav-item'>
+          <button className="navvar-toggler btn" type="button">
+            <Link className="nav-link" href="#MyTickets" to="myTickets" >
+              My Tickets
+            </Link>
+          </button>
+          </li>
+
         </ul>
         </div>
       </div>
     </nav>
-      //   <Navbar bg="light" expand="lg">
-      //   <Container>
-      //     {/* <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand> */}
-      //     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      //     <Navbar.Collapse id="basic-navbar-nav">
-      //       <Nav className="me-auto">
-      //         <Nav.Link href="#home">Home</Nav.Link>
-      //         <Nav.Link href="#link">Link</Nav.Link>
-      //         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-      //           <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-      //           <NavDropdown.Item href="#action/3.2">
-      //             Another action
-      //           </NavDropdown.Item>
-      //           <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-      //           <NavDropdown.Divider />
-      //           <NavDropdown.Item href="#action/3.4">
-      //             Separated link
-      //           </NavDropdown.Item>
-      //         </NavDropdown>
-      //       </Nav>
-      //     </Navbar.Collapse>
-      //   </Container>
-      // </Navbar>
+
   );
 };
 

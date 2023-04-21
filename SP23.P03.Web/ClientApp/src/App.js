@@ -13,6 +13,7 @@ import Tickets from './pages/Tickets';
 
 // import HomeFooter from './components/HomeFooter/HomeFooter';
 import HomeLayout from './components/HomeLayout/HomeLayout';
+import MyTickets from './pages/MyTickets';
 
 // import ContactUs from './components/ContactUs/ContactUs';
 
@@ -32,6 +33,7 @@ function App() {
               <Route index element={<Home />} />
               <Route path="tickets" element={<Tickets />} />
               <Route path="contact" element={<Contact />} />
+              <Route path="myTickets" element={<MyTickets />} />
               <Route path="*" element={<NoPage />} />
             {/* </Route> */}
           </Routes>
