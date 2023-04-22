@@ -1,30 +1,31 @@
 import Map from "../components/Map/Map";
 import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
+
 import axios from "axios";
 
 const Tickets = () => {
 
     const baseUrl = "https://selu383-sp23-p03-g05.azurewebsites.net"
-    const [startLoc, setStartLoc] = useState([]);
-    const [endLoc, setEndLoc] = useState([]);
+    const [startLoc, setStartLoc] = useState('');
+    const [endLoc, setEndLoc] = useState('');
     const [userName, setUsername] = useState('');
 
     const handleSubmit = (e) =>
 {
-    axios.get(`${baseUrl}/api/authentication/me`, { })
-    .then((response) => {
-        setUsername(response.data.id);
+    const user = axios.get(`${baseUrl}/api/authentication/me`, { })
+    .then(function (response) {
+        setUsername(response.data);
         
     });
 
-    console.log(userName);
+    console.log(user);
 
-    axios.post(`${baseUrl}/api/tickets`, 
+    const result = axios.post(`${baseUrl}/api/tickets`, 
     {
-        StartingTrainStation: startLoc, 
-        EndingTrainStation: endLoc, 
-        Passenger: userName, 
+        StartingTrainStation: {startLoc}, 
+        EndingTrainStation: {endLoc}, 
+        Passenger: {userName}, 
         DepartureTime: new Date()
     }).then(function (response) {
             console.log(response);
@@ -32,6 +33,7 @@ const Tickets = () => {
             console.log(error);
         });
     
+        console.log(result);
 }
 
     return  <>
