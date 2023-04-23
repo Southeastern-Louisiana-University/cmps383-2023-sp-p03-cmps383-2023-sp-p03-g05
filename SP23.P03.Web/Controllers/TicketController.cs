@@ -65,7 +65,7 @@ namespace SP23.P03.Web.Controllers;
         }
 
         [HttpPost]
-        [Authorize(Roles = RoleNames.User +","+ RoleNames.Admin)]
+        //[Authorize(Roles = RoleNames.User +","+ RoleNames.Admin)]
         public ActionResult<TicketDto> CreateTicket(TicketDto dto) {
             if (IsInvalid(dto)) {
                 return BadRequest();
