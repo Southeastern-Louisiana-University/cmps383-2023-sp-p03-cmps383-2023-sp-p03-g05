@@ -15,7 +15,7 @@ const Tickets = () => {
 {
     const user = axios.get(`${baseUrl}/api/authentication/me`, { })
     .then(function (response) {
-        setUsername(response.data);
+        setUsername(response.data.id);
         
     });
 
@@ -24,9 +24,8 @@ const Tickets = () => {
     const result = axios.post(`${baseUrl}/api/tickets`, 
     {
         StartingTrainStation: {startLoc}, 
-        EndingTrainStation: {endLoc}, 
-        Passenger: {userName}, 
-        DepartureTime: new Date()
+        EndingTrainStation: {endLoc},
+        Passenger: userName
     }).then(function (response) {
             console.log(response);
         }).catch(function (error) {
