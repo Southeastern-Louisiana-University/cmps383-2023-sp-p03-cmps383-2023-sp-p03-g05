@@ -65,7 +65,7 @@ namespace SP23.P03.Web.Controllers;
         }
 
         [HttpPost]
-        [Authorize(Roles = RoleNames.User +","+ RoleNames.Admin)]
+        //[Authorize(Roles = RoleNames.User +","+ RoleNames.Admin)]
         public ActionResult<TicketDto> CreateTicket(TicketDto dto) {
             if (IsInvalid(dto)) {
                 return BadRequest();
@@ -75,7 +75,7 @@ namespace SP23.P03.Web.Controllers;
                 StartingTrainStation = GetTrainStation(dto.StartingTrainStation.Id),
                 EndingTrainStation =  GetTrainStation(dto.EndingTrainStation.Id),
                 Passenger = dataContext.Users.FirstOrDefault(x => x.Id == User.GetCurrentUserId()),
-                DepartureTime = dto.DepartureTime
+                DepartureTime = new DateTimeOffset(DateTime.Today)
             };
             tickets.Add(ticket);
 
