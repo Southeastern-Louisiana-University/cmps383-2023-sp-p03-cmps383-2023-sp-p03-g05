@@ -12,9 +12,9 @@ const Navbar = () => {
     <nav className="navbar navbar-container navbar-expand-md navbar-light align-items-center" style={{backgroundColor: "#f43f5e"}}>
       <div className="container-fluid d-flex">
 
-      <Button style={{backgroundColor: '#f43f5e', borderWidth: '0px'}}>
+      <Button style={{backgroundColor: '#ffffff', borderWidth: '0px', padding: '5px', height: '80px', width: '140px'}}>
         <Link className="navbar-brand" to="/">
-        <img src="./assets/EnTrackLogo_Light_NoWords.ico" alt="" width="80" height="50"></img>
+        <img src="./assets/EnTrackLogo_Light.png" alt="" width="100%" height="100%"></img>
         </Link>
       </Button>
 
