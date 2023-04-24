@@ -14,12 +14,12 @@ const [password, setPassword] = useState('');
 
 const handleSubmit = (e) =>
 {
-    axios.post(`${baseUrl}/api/authentication/login`, { username, password })
+    const user = axios.post(`${baseUrl}/api/authentication/login`, { username, password })
     .then((response) => {
-        console.log(response.data.userName);
+        console.log(response.data);
         
     });
-    
+    console.log(user);
 }
 
     return (
