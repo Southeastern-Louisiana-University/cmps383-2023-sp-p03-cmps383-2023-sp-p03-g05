@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
@@ -15,7 +16,7 @@ const AuthContext = React.createContext({
     authCookieContext: "",
     user: {}
   },
-  setLoginState: {loginState  }
+  setLoginState: (loginState) => {  }
 })//used for storing the authCookie go to https://github.com/Southeastern-Louisiana-University/cmps383-2023-sp-p03-test-g0t/blob/master/SP23-P03-Mobile/App.js
 //to finish setup
 
